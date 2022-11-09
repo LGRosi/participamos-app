@@ -1,45 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.scss";
+import Comments from "./components/Comments";
+import Form from "./components/Form";
 
 function App() {
 
-    const [comment, setComment] = useState<string>('');
-    const [comments, setComments] = useState<string[]>([]);
-
-    const handleClick = () => {
-        setComments(comments => [...comments, comment]);
-    } 
-
-    const handleChange = (e: any) => {
-        setComment(e.target.value);
-    }
-
-
   return (
     <React.Fragment>
-      <div className="main-container">
-        {
-            comments.map((text) => (
-                <div key={text} className="comments-container">{text}</div>
-            ))
-        }
-
-        <div className="comments-box-container">
-          <h1 className="comment-title">Comentarios</h1>
-          <textarea
-            className="comment-textarea"
-            onChange={handleChange}
-            value={comment}
-          ></textarea>
-          <button
-            type="button"
-            className="comment-button"
-            onClick={handleClick}
-          >
-            Publicar
-          </button>
-        </div>
-      </div>
+        {/* <Comments /> */}
+        {/* <Form /> */}
     </React.Fragment>
   );
 }
