@@ -1,15 +1,19 @@
-import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Comments from "./components/Comments";
-import Form from "./components/Form";
+
+const Home = () => <h1>Home</h1>
+
+const SearchPage = () => <h1>Search Page</h1>
 
 function App() {
 
   return (
-    <React.Fragment>
-        {/* <Comments /> */}
-        {/* <Form /> */}
-    </React.Fragment>
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search-page" element={<SearchPage />} />
+      </Routes>
+    </div>
   );
 }
 
