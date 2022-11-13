@@ -8,7 +8,7 @@ interface SideBarMenuItemsViewProps {
 
 function SideBarMenuItemsView({ item, isOpen }: SideBarMenuItemsViewProps) {
     return(
-        <div className="side-bar-menu-item">
+        <div className="side-bar-menu-item-view">
             <a href={item.url}>
                 <div className={classNames('item-content', isOpen ? '' : 'collapsed')}>
                     <div className="icon">

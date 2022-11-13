@@ -3,6 +3,7 @@ import "./App.scss";
 import { SideBarMenu } from "./components/SideBarMenu";
 import { SideBarMenuItem } from "./models/sideBarMenu.interfaces";
 import { FcAdvertising } from "react-icons/fc";
+import profileImage from "./assets/images/profile.png";
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
         id: 'card01',
         displayName: 'Lucas Rosi',
         title: 'FullStack Developer',
-        photoUrl: '',
+        photoUrl: profileImage,
         url: '/'
     }
 
