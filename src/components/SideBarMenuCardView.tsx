@@ -9,7 +9,12 @@ interface SideBarMenuCardViewProps {
 function SideBarMenuCardView({ card, isOpen }: SideBarMenuCardViewProps) {
     return(
         <div className="side-bar-menu-card-view">
-            <img className="profile" src={card.photoUrl} width="100%" alt="Imagen de perfil" />
+            <img 
+                className="profile" 
+                src={card.photoUrl} 
+                alt={card.displayName} 
+                width="100%" 
+            />
             <div className={classNames('profile-info', isOpen ? '' : 'collapsed')}>
                 <div className="name">{card.displayName}</div>
                 <div className="title">{card.title}</div>

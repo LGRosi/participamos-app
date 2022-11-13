@@ -1,5 +1,6 @@
 import { SideBarMenuItem } from "../models/sideBarMenu.interfaces";
 import { classNames } from "../utils/classes";
+import "../scss/components/_side-bar-menu-items-view.scss";
 
 interface SideBarMenuItemsViewProps {
     item: SideBarMenuItem;
