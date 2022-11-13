@@ -1,7 +1,9 @@
+import { SideBarMenu } from "../components/SideBarMenu";
+
 function Home() {
     return(
         <>
-            <h1>La Home</h1>
+            <SideBarMenu></SideBarMenu>
         </>
     )
 
