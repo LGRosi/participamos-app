@@ -1,9 +1,9 @@
-import { SideBarMenu } from "../components/SideBarMenu";
+// import { SideBarMenu } from "../components/SideBarMenu";
 
 function Home() {
     return(
         <>
-            <SideBarMenu></SideBarMenu>
+            {/* <SideBarMenu></SideBarMenu> */}
         </>
     )
 
