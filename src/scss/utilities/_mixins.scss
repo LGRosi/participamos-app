@@ -1,3 +1,5 @@
+/* Mixins: Pequeñas estructuras de estilos que generan un componente reutilizable en toda la app. */
+
 @mixin transition($property) {
     transition: $property 0.2s ease-in-out;
 }
