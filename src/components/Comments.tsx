@@ -13,7 +13,7 @@ function Comments() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <div className="main-container">
         {comments.map((text) => (
           <div key={text} className="comments-container">
@@ -37,7 +37,7 @@ function Comments() {
           </button>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 }
 

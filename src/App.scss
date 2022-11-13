@@ -5,6 +5,11 @@
    background-color: #ececec;
 }
 
+.is-active {
+    font-weight: bold;
+    pointer-events: none;
+}
+
 .main-container {
    height: 90vh;
    display: flex;
