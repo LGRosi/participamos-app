@@ -1,14 +1,14 @@
 import { IconType } from 'react-icons';
 
 export interface SideBarMenuItem {
-    id: string;
+    id: number;
     label: string;
     icon: IconType;
     url: string;
 }
 
 export interface SideBarMenuCard {
-    id: string;
+    id: number;
     displayName: string;
     photoUrl: string;
     title: string;

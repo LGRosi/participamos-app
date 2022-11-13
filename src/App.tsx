@@ -2,34 +2,40 @@ import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import { SideBarMenu } from "./components/SideBarMenu";
 import { SideBarMenuItem } from "./models/sideBarMenu.interfaces";
-import { FcAdvertising } from "react-icons/fc";
+import { FcConferenceCall, FcHome, FcIdea, FcSettings } from "react-icons/fc";
 import profileImage from "./assets/images/profile.png";
 
 function App() {
 
     const items: SideBarMenuItem[] = [
         {
-            id: '1',
-            label: 'Hola',
-            icon: FcAdvertising,
+            id: 1,
+            label: 'Inicio',
+            icon: FcHome,
             url: '/'
         },
         {
-            id: '2',
-            label: 'Hola',
-            icon: FcAdvertising,
+            id: 2,
+            label: 'Ideas',
+            icon: FcIdea,
             url: '/'
         },
         {
-            id: '3',
-            label: 'Hola',
-            icon: FcAdvertising,
+            id: 3,
+            label: 'Grupos de ayuda',
+            icon: FcConferenceCall,
+            url: '/'
+        },
+        {
+            id: 4,
+            label: 'Configuración',
+            icon: FcSettings,
             url: '/'
         },
     ];
 
     const card = {
-        id: 'card01',
+        id: 1,
         displayName: 'Lucas Rosi',
         title: 'FullStack Developer',
         photoUrl: profileImage,

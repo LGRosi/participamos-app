@@ -23,7 +23,7 @@ export function SideBarMenu({ items, card }: SideBarMenuProps) {
     <div className={classNames('side-bar-menu', isOpen ? 'expanded' : 'collapsed')}>
         <div className="menu-button">
             <button className="hamburger-button" type="button" onClick={handleClick}>
-                <VscMenu />
+                <VscMenu size="22" />
             </button>
         </div>
         <SideBarMenuCardView card={card} isOpen={isOpen} />

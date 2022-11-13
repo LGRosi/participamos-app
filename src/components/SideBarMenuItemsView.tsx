@@ -8,12 +8,13 @@ interface SideBarMenuItemsViewProps {
 }
 
 function SideBarMenuItemsView({ item, isOpen }: SideBarMenuItemsViewProps) {
+
     return(
         <div className="side-bar-menu-item-view">
             <a href={item.url}>
                 <div className={classNames('item-content', isOpen ? '' : 'collapsed')}>
                     <div className="icon">
-                        <item.icon size="32" />
+                        <item.icon size="25" />
                     </div>
                     <span className="label">{item.label}</span>
                 </div>
