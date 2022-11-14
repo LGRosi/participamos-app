@@ -1,36 +1,34 @@
+import { FcConferenceCall, FcHome, FcIdea, FcSettings } from "react-icons/fc";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import { SideBarMenu } from "./components/SideBarMenu";
 import { SideBarMenuItem } from "./models/sideBarMenu.interfaces";
-import { FcConferenceCall, FcHome, FcIdea, FcSettings } from "react-icons/fc";
+import Home from "./pages/Home";
+import Ideas from "./pages/Ideas";
+import SupportGroups from "./pages/SupportGroups";
 import profileImage from "./assets/images/profile.png";
+import Profile from "./pages/Profile";
 
 function App() {
 
-    const items: SideBarMenuItem[] = [
+     const items: SideBarMenuItem[] = [
         {
             id: 1,
             label: 'Inicio',
             icon: FcHome,
-            url: '/'
+            path: '/'
         },
         {
             id: 2,
             label: 'Ideas',
             icon: FcIdea,
-            url: '/'
+            path: '/ideas'
         },
         {
             id: 3,
-            label: 'Grupos de ayuda',
+            label: 'Grupos de Ayuda',
             icon: FcConferenceCall,
-            url: '/'
-        },
-        {
-            id: 4,
-            label: 'Configuración',
-            icon: FcSettings,
-            url: '/'
+            path: '/grupos-de-ayuda'
         },
     ];
 
@@ -39,18 +37,20 @@ function App() {
         displayName: 'Lucas Rosi',
         title: 'FullStack Developer',
         photoUrl: profileImage,
-        url: '/'
+        path: '/perfil'
     }
 
   return (
     <>
-      <SideBarMenu items={items} card={card}></SideBarMenu>
-      {/* <Header /> */}
-      {/* <Routes>
+        <SideBarMenu items={items} card={card} />
+        <Routes>
+            <Route path="/perfil" element={<Profile />} />
             <Route path="/" element={<Home />} />
-            <Route path="/search-page" element={<SearchPage />} />
+            <Route path="/ideas" element={<Ideas />} />
+            <Route path="/grupos-de-ayuda" element={<SupportGroups />} />
+
             <Route path="*" element={<Home />} />
-        </Routes> */}
+        </Routes>
     </>
   );
 }

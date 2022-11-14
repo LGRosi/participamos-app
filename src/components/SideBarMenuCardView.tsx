@@ -1,6 +1,7 @@
 import { SideBarMenuCard } from "../models/sideBarMenu.interfaces";
 import { classNames } from "../utils/classes";
 import "../scss/components/_side-bar-menu-card-view.scss";
+import { Link } from "react-router-dom";
 
 interface SideBarMenuCardViewProps {
     card: SideBarMenuCard;
@@ -19,8 +20,8 @@ function SideBarMenuCardView({ card, isOpen }: SideBarMenuCardViewProps) {
             <div className={classNames('profile-info', isOpen ? '' : 'collapsed')}>
                 <div className="name">{card.displayName}</div>
                 <div className="title">{card.title}</div>
-                <div className="url">
-                    <a href={card.url}>Ir al perfil</a>
+                <div className="path">
+                    <Link to={card.path}>Ir al perfil</Link>
                 </div>
             </div>
         </div>

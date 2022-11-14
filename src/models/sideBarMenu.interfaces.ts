@@ -4,7 +4,7 @@ export interface SideBarMenuItem {
     id: number;
     label: string;
     icon: IconType;
-    url: string;
+    path: string;
 }
 
 export interface SideBarMenuCard {
@@ -12,5 +12,5 @@ export interface SideBarMenuCard {
     displayName: string;
     photoUrl: string;
     title: string;
-    url: string;
+    path: string;
 }

@@ -39,7 +39,7 @@
         }
 
         &:hover {
-            background-color: #325ba8;
+            background-color: #4E42D4;
             color: white;
         }
 
@@ -54,12 +54,13 @@
 
     .tooltip {
         position: absolute;
-        background-color: black;
+        background-color: #051A26;
         left: 70px;
         padding: 10px;
         border-radius: 4px;
         text-transform: capitalize;
         display: none;
+        text-align: center;
     }
 }
 

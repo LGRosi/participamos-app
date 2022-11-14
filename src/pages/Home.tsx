@@ -1,9 +1,7 @@
-// import { SideBarMenu } from "../components/SideBarMenu";
-
 function Home() {
     return(
         <>
-            {/* <SideBarMenu></SideBarMenu> */}
+            <h1>Inicio</h1>  
         </>
     )
 
