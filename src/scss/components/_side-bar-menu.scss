@@ -1,0 +1,33 @@
+@import '../utilities/mixins';
+
+.side-bar-menu {
+    background: #051A26;
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include transition(width);
+
+    &.expanded {
+        width: 300px;
+    }
+
+    &.collapsed {
+        width: 60px;
+    }
+
+    .menu-button {
+        display: flex;
+        justify-content: flex-end;
+
+        .hamburger-button {
+            color: white;
+            padding: 10px;
+            width: 60px;
+        }
+    }
+
+}
