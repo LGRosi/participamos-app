@@ -45,14 +45,14 @@ function App() {
     <>  
         <Header />
         <SideBarMenu items={items} card={card} />
-        {/* <Routes>
+        <Routes>
             <Route path="/perfil" element={<Profile />} />
             <Route path="/" element={<Home />} />
             <Route path="/ideas" element={<Ideas />} />
             <Route path="/grupos-de-ayuda" element={<SupportGroups />} />
 
             <Route path="*" element={<Home />} />
-        </Routes> */}
+        </Routes>
     </>
   );
 }

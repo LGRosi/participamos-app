@@ -1,16 +1,17 @@
 header {
-    color: white;
+    background: #4e42d4;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     padding-left: 16%;
     padding-block: 6px;
-    box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.18);
 
     h1 {
         font-size: 13px;
-        font-weight: 800;
+        font-weight: 600;
         letter-spacing: 1.5px;
-        color: #051a26;
+        color: white;
+        padding-left: 5px;
     }
 }
