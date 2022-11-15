@@ -8,6 +8,7 @@ import Ideas from "./pages/Ideas";
 import SupportGroups from "./pages/SupportGroups";
 import profileImage from "./assets/images/profile.png";
 import Profile from "./pages/Profile";
+import Header from "./components/Header";
 
 function App() {
 
@@ -41,16 +42,17 @@ function App() {
     }
 
   return (
-    <>
+    <>  
+        <Header />
         <SideBarMenu items={items} card={card} />
-        <Routes>
+        {/* <Routes>
             <Route path="/perfil" element={<Profile />} />
             <Route path="/" element={<Home />} />
             <Route path="/ideas" element={<Ideas />} />
             <Route path="/grupos-de-ayuda" element={<SupportGroups />} />
 
             <Route path="*" element={<Home />} />
-        </Routes>
+        </Routes> */}
     </>
   );
 }
