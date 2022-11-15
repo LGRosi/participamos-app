@@ -1,0 +1,17 @@
+header {
+    background: #4e42d4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16%;
+    padding-block: 6px;
+
+    h1 {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        color: white;
+        padding-left: 5px;
+    }
+}

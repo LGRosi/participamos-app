@@ -3,3 +3,10 @@
 @mixin transition($property) {
     transition: $property 0.2s ease-in-out;
 }
+
+@mixin buttonOutline() {
+    background: white;
+    color: #051a26;
+    border-radius: 5px;
+    padding: 5px 10px;
+}

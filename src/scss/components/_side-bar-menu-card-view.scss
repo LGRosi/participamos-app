@@ -12,7 +12,7 @@
 
     .profile-info {
         overflow: hidden;
-        height: 80px;
+        height: 90px;
         @include transition(height);
 
         &.collapsed {
@@ -26,11 +26,13 @@
         }
 
         .path {
+            margin-top: 10px;
             a {
-                color: #4E42D4;
+                @include buttonOutline;
 
                 &:hover {
                     color: white;
+                    background: #051a26;
                 }
             }
         }
