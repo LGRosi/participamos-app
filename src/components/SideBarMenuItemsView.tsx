@@ -21,9 +21,9 @@ function SideBarMenuItemsView({ item, isOpen }: SideBarMenuItemsViewProps) {
         <div className="side-bar-menu-item-view">
             <NavLink to={item.path}>
                 <div className={classNames('item-content', isOpen ? '' : 'collapsed')} onClick={handleClick}>
-                    <div className="icon">
+                    <button type="button" className="icon">
                         <item.icon size="25" />
-                    </div>
+                    </button>
                     <span className="label">{item.label}</span>
                 </div>
             </NavLink>
