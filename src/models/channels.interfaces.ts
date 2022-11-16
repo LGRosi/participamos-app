@@ -4,4 +4,5 @@ export interface Channel {
     id: number;
     icon: IconType;
     title: string;
+    path: string;
 }

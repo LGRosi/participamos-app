@@ -9,7 +9,7 @@ import IdeaChannelsPage from "./pages/IdeaChannelsPage";
 import SupportGroupsPage from "./pages/SupportGroupsPage";
 import profileImage from "./assets/images/profile.png";
 import Header from "./components/Header";
-import Chat from "./pages/Chat";
+import ChatPage from "./pages/ChatPage";
 
 function App() {
 
@@ -49,9 +49,8 @@ function App() {
         <Routes>
             <Route path="/perfil" element={<ProfilePage />} />
             <Route path="/" element={<HomePage />} />
-            <Route path="/canales-de-ideas" element={<IdeaChannelsPage />}>
-                <Route path="chat" element={<Chat />} />
-            </Route>
+            <Route path="/canales-de-ideas" element={<IdeaChannelsPage />} />
+            <Route path="/canales-de-ideas/:id/chat" element={<ChatPage />} />
             <Route path="/grupos-de-ayuda" element={<SupportGroupsPage />} />
 
             <Route path="*" element={<HomePage />} />

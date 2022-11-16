@@ -2,7 +2,7 @@ import { Channel } from "../models/channels.interfaces";
 import "../scss/components/_channels.scss";
 import { BsHash } from "react-icons/bs";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Channels() {
 
@@ -13,23 +13,28 @@ function Channels() {
             id: 1,
             icon: BsHash,
             title: 'Educación',
+            path: 'educacion'
         },
         {
             id: 2,
             icon: BsHash,
-            title: 'Salud'
+            title: 'Salud',
+            path: 'salud'
         },
         {
             id: 3,
             icon: BsHash,
-            title: 'Donaciones'
+            title: 'Donaciones',
+            path: 'donaciones'
         },
         {
             id: 4,
             icon: BsHash,
-            title: 'Transporte Público'
+            title: 'Transporte Público',
+            path: 'transporte-publico'
         },
     ];
+
 
     return(
         <div className="div-channel-container">
@@ -37,14 +42,14 @@ function Channels() {
             <ul className="ul-channel-container">
                 {
                     arrayChannels.map(channelItems => (
-                        <li key={channelItems.id} className="li-channel-element">
-                            <Link to={'chat'}>
+                        <Link key={channelItems.id} to={`${channelItems.path}/chat`}>
+                            <li key={channelItems.id} className="li-channel-element">
                                 <channelItems.icon color="#4e42d4" size={25} />
                                 <p className="p-title-element">
                                     { channelItems.title }
                                 </p>
-                            </Link>
-                        </li>
+                            </li>
+                        </Link>
                     ))
                 }
             </ul>

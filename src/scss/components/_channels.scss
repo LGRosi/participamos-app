@@ -16,15 +16,12 @@
 
         .li-channel-element {
             margin-bottom: 20px;
-            
-            button {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                
-                .p-title-element {
-                    font-size: 15px;
-                }
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .p-title-element {
+                font-size: 15px;
             }
         }
     }
