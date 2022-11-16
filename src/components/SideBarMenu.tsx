@@ -4,7 +4,7 @@ import { classNames } from "../utils/classes";
 import { VscMenu } from "react-icons/vsc";
 import SideBarMenuCardView from "./SideBarMenuCardView";
 import SideBarMenuItemsView from "./SideBarMenuItemsView";
-import '../scss/components/_side-bar-menu.scss';
+import "../scss/layouts/_side-bar-menu.scss";
 
 interface SideBarMenuProps {
     items: SideBarMenuItem[];
@@ -29,7 +29,9 @@ export function SideBarMenu({ items, card }: SideBarMenuProps) {
         <SideBarMenuCardView card={card} isOpen={isOpen} />
         {
             items.map(item => (
-                <SideBarMenuItemsView key={item.id} item={item} isOpen={isOpen} />
+                <nav>
+                    <SideBarMenuItemsView key={item.id} item={item} isOpen={isOpen} />
+                </nav>
             ))
         }
     </div>

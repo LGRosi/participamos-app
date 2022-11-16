@@ -9,7 +9,8 @@ import IdeaChannelsPage from "./pages/IdeaChannelsPage";
 import SupportGroupsPage from "./pages/SupportGroupsPage";
 import profileImage from "./assets/images/profile.png";
 import Header from "./components/Header";
-import ChatPage from "./pages/ChatPage";
+import ForumPage from "./pages/ForumPage";
+
 
 function App() {
 
@@ -46,15 +47,17 @@ function App() {
     <>  
         <Header />
         <SideBarMenu items={items} card={card} />
-        <Routes>
-            <Route path="/perfil" element={<ProfilePage />} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="/canales-de-ideas" element={<IdeaChannelsPage />} />
-            <Route path="/canales-de-ideas/:id/chat" element={<ChatPage />} />
-            <Route path="/grupos-de-ayuda" element={<SupportGroupsPage />} />
+        <main>
+            <Routes>
+                <Route path="/perfil" element={<ProfilePage />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/canales-de-ideas" element={<IdeaChannelsPage />} />
+                <Route path="/canales-de-ideas/:id/foro" element={<ForumPage />} />
+                <Route path="/grupos-de-ayuda" element={<SupportGroupsPage />} />
 
-            <Route path="*" element={<HomePage />} />
-        </Routes>
+                <Route path="*" element={<HomePage />} />
+            </Routes>
+        </main>
     </>
   );
 }
