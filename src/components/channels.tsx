@@ -2,6 +2,7 @@ import { Channel } from "../models/channels.interfaces";
 import "../scss/components/_channels.scss";
 import { BsHash } from "react-icons/bs";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Channels() {
 
@@ -11,7 +12,7 @@ function Channels() {
         {
             id: 1,
             icon: BsHash,
-            title: 'Educación'
+            title: 'Educación',
         },
         {
             id: 2,
@@ -37,12 +38,12 @@ function Channels() {
                 {
                     arrayChannels.map(channelItems => (
                         <li key={channelItems.id} className="li-channel-element">
-                            <button type="button">
+                            <Link to={'chat'}>
                                 <channelItems.icon color="#4e42d4" size={25} />
                                 <p className="p-title-element">
                                     { channelItems.title }
                                 </p>
-                            </button>
+                            </Link>
                         </li>
                     ))
                 }
