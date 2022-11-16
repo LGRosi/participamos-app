@@ -1,4 +1,4 @@
-function SupportGroups() {
+function SupportGroupsPage() {
     return(
         <>
             <h1>Grupos de ayuda</h1>
@@ -7,4 +7,4 @@ function SupportGroups() {
 
 }
 
-export default SupportGroups;
+export default SupportGroupsPage;

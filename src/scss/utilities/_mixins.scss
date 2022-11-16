@@ -10,3 +10,12 @@
     border-radius: 5px;
     padding: 5px 10px;
 }
+
+@mixin button($width, $heigth) {
+    width: $width;
+    height: $heigth;
+    background: #4e42d4;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+}

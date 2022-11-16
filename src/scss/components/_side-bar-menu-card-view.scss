@@ -1,11 +1,12 @@
 @import "../utilities/mixins";
+@import '../themes/light';
 
 .side-bar-menu-card-view {
     text-align: center;
 
     .profile {
         border-radius: 50%;
-        padding: 10px;
+        padding: 5px;
         box-sizing: border-box;
         max-width: 128px;
     }
@@ -28,11 +29,11 @@
         .path {
             margin-top: 10px;
             a {
-                @include buttonOutline;
+                @include buttonOutline();
 
                 &:hover {
-                    color: white;
-                    background: #051a26;
+                    color: $white;
+                    background: $black;
                 }
             }
         }

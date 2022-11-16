@@ -1,7 +1,8 @@
 @import '../utilities/mixins';
+@import '../themes/light';
 
 .side-bar-menu {
-    background: #4e42d4;
+    background: $color-primary;
     color: white;
     position: absolute;
     left: 0;
@@ -9,7 +10,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    // box-shadow: 5px 0px 10px 0px rgba(0,0,0,45%);
     @include transition(width);
 
     &.expanded {
@@ -17,7 +17,7 @@
     }
 
     &.collapsed {
-        width: 60px;
+        width: 45px;
     }
 
     .menu-button {
@@ -25,7 +25,7 @@
         justify-content: flex-end;
 
         .hamburger-button {
-            color: white;
+            color: $white;
             padding: 10px;
             width: 60px;
         }

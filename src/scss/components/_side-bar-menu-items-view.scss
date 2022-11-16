@@ -1,17 +1,16 @@
 @import '../utilities/mixins';
+@import '../themes/light';
 
 .side-bar-menu-item-view {
     text-align: left;
     display: flex;
     align-items: center;
-    margin: 0 5px;
 
     a {
-        color: white;
+        color: $white;
         display: block;
         padding: 10px;
         width: 100%;
-        border-radius: 5px;
 
         .item-content {
             display: flex;
@@ -39,8 +38,8 @@
         }
 
         &:hover {
-            background-color: #051a26;
-            color: white;
+            background-color: $black;
+            color: $white;
         }
 
         &:hover {
@@ -54,7 +53,7 @@
 
     .tooltip {
         position: absolute;
-        background-color: #051a26;
+        background-color: $black;
         left: 70px;
         padding: 10px;
         border-radius: 4px;
