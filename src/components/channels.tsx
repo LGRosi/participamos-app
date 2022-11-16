@@ -42,7 +42,7 @@ function Channels() {
             <ul className="ul-channel-container">
                 {
                     arrayChannels.map(channelItems => (
-                        <Link key={channelItems.id} to={`canal-${channelItems.path}/chat`}>
+                        <Link key={channelItems.id} to={`canal-${channelItems.path}/foro`}>
                             <li key={channelItems.id} className="li-channel-element">
                                 <channelItems.icon color="#4e42d4" size={25} />
                                 <p className="p-title-element">

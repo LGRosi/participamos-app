@@ -1,0 +1,26 @@
+@import '../themes/light';
+
+.nav-bar-forum-container {
+    background: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px 10px 55px;
+
+    .name-channel-forum-container {
+        display: flex;
+        align-items: center;
+
+        .name-channel {
+            color: $white;
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+
+    .icons-search-and-people-container {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+    }
+}

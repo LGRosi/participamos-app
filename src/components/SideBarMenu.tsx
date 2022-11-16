@@ -29,9 +29,7 @@ export function SideBarMenu({ items, card }: SideBarMenuProps) {
         <SideBarMenuCardView card={card} isOpen={isOpen} />
         {
             items.map(item => (
-                <nav>
-                    <SideBarMenuItemsView key={item.id} item={item} isOpen={isOpen} />
-                </nav>
+                <SideBarMenuItemsView key={item.id} item={item} isOpen={isOpen} />
             ))
         }
     </div>

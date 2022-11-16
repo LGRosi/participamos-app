@@ -1,9 +1,14 @@
+import NavBarForum from "../components/NavBarForum";
 import "../scss/views/_forum-page.scss"
 
 function ForumPage() {
     return(
         <>
-            <h1>Chat</h1>
+            <NavBarForum />
+            <section className="forum-page-container">
+                <h2>¡Te damos la bienvenida a !</h2>
+                <p className="description">Aquí puedes empezar a escribir tus ideas.</p>
+            </section>
         </>
     )
 }
