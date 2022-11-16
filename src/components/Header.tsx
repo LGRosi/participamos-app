@@ -1,5 +1,5 @@
 import logoParticipamos from "../assets/svg/icon-logo-participamos-white.svg";
-import "../scss/components/_header.scss";
+import "../scss/layouts/_header.scss";
 
 function Header() {
 

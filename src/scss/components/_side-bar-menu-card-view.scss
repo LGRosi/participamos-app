@@ -1,4 +1,5 @@
 @import "../utilities/mixins";
+@import '../themes/light';
 
 .side-bar-menu-card-view {
     text-align: center;
@@ -31,8 +32,8 @@
                 @include buttonOutline();
 
                 &:hover {
-                    color: white;
-                    background: #051a26;
+                    color: $white;
+                    background: $black;
                 }
             }
         }

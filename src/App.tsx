@@ -1,13 +1,13 @@
-import { FcConferenceCall, FcHome, FcIdea, FcSettings } from "react-icons/fc";
+import { FcConferenceCall, FcHome, FcIdea } from "react-icons/fc";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import { SideBarMenu } from "./components/SideBarMenu";
 import { SideBarMenuItem } from "./models/sideBarMenu.interfaces";
-import Home from "./pages/Home";
-import Ideas from "./pages/Ideas";
-import SupportGroups from "./pages/SupportGroups";
+import ProfilePage from "./pages/ProfilePage";
+import HomePage from "./pages/HomePage";
+import IdeaChannelsPage from "./pages/IdeaChannelsPage";
+import SupportGroupsPage from "./pages/SupportGroupsPage";
 import profileImage from "./assets/images/profile.png";
-import Profile from "./pages/Profile";
 import Header from "./components/Header";
 
 function App() {
@@ -21,9 +21,9 @@ function App() {
         },
         {
             id: 2,
-            label: 'Ideas',
+            label: 'Canales de Ideas',
             icon: FcIdea,
-            path: '/ideas'
+            path: '/canales-de-ideas'
         },
         {
             id: 3,
@@ -46,12 +46,12 @@ function App() {
         <Header />
         <SideBarMenu items={items} card={card} />
         <Routes>
-            <Route path="/perfil" element={<Profile />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/ideas" element={<Ideas />} />
-            <Route path="/grupos-de-ayuda" element={<SupportGroups />} />
+            <Route path="/perfil" element={<ProfilePage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/canales-de-ideas" element={<IdeaChannelsPage />} />
+            <Route path="/grupos-de-ayuda" element={<SupportGroupsPage />} />
 
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<HomePage />} />
         </Routes>
     </>
   );

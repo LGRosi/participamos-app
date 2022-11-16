@@ -1,7 +1,8 @@
-import "../scss/components/_ideas.scss";
+import "../scss/views/_idea-channels-page.scss";
 import { BsPlus } from 'react-icons/bs';
+import Channels from "../components/channels";
 
-function Ideas() {
+function IdeaChannelsPage() {
     return (
       <section>
         <h2>Elegí un canal para aportar tus ideas</h2>
@@ -16,11 +17,11 @@ function Ideas() {
         </div>
 
         <div>
-            
+            <Channels />
         </div>
       </section>
     );
 
 }
 
-export default Ideas;
+export default IdeaChannelsPage;
