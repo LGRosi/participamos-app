@@ -1,15 +1,26 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Comments from "../components/Comments";
 import NavBarForum from "../components/NavBarForum";
 import "../scss/views/_forum-page.scss"
 
 function ForumPage() {
+
+    const { id } = useParams();
+
+    useEffect(() => {
+      console.log("Use Effect");
+    }, [id]);
+
     return(
-        <>
+        <div className="forum-page-container">
             <NavBarForum />
-            <section className="forum-page-container">
-                <h2>¡Te damos la bienvenida a !</h2>
+            <section className="section-comments-container">
+                <h2>¡Te damos la bienvenida al {id}!</h2>
                 <p className="description">Aquí puedes empezar a escribir tus ideas.</p>
+                <Comments /> 
             </section>
-        </>
+        </div>
     )
 }
 

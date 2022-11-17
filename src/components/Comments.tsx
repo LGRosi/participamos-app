@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { BiSend } from "react-icons/bi";
+import SentMessageBox from "./SentMessageBox";
 
 function Comments() {
   const [comment, setComment] = useState<string>("");
@@ -10,34 +12,40 @@ function Comments() {
 
   const handleChange = (e: any) => {
     setComment(e.target.value);
+    
   };
 
   return (
-    <>
-      <div className="main-container">
-        {comments.map((text) => (
-          <div key={text} className="comments-container">
-            {text}
-          </div>
-        ))}
+    <div className="main-comments-container">
+        <div className="message-container">
+            {
+                comments.map((text: string) => (
+                    // <SentMessageBox key={text} />
+                    <div key={text} className="comments-container">
+                        {text}
+                    </div>
+                ))
+            }
+        </div>
 
         <div className="comments-box-container">
-          <h1 className="comment-title">Comentarios</h1>
-          <textarea
-            className="comment-textarea"
-            onChange={handleChange}
-            value={comment}
-          ></textarea>
-          <button
-            type="button"
-            className="comment-button"
-            onClick={handleClick}
-          >
-            Publicar
-          </button>
+            <textarea
+                autoComplete="off"
+                placeholder="Enviar mensaje a la comunidad..."
+                className="comment-textarea"
+                onChange={handleChange}
+                value={comment}
+            >
+            </textarea>
+            <button
+                type="button"
+                className="comment-button"
+                onClick={handleClick}
+            >
+                <BiSend color="#FFFFFF" size={16}/>
+            </button>
         </div>
-      </div>
-    </>
+    </div>
   );
 }
 

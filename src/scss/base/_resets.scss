@@ -20,3 +20,15 @@ button {
    background: none;
    font-family: var(--font-nunito);
 }
+
+textarea {
+    font-family: var(--font-nunito);
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &::placeholder {
+        font-family: var(--font-nunito);
+    }
+}

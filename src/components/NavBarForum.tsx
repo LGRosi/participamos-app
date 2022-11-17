@@ -2,13 +2,22 @@ import { GoSearch } from "react-icons/go";
 import { BsPeopleFill } from "react-icons/bs";
 import { BsHash } from "react-icons/bs";
 import "../scss/components/_nav-bar-forum.scss";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 function NavBarForum() {
+
+    const { id } = useParams();
+
+    useEffect(() => {
+      console.log("Use Effect");
+    }, [id]);
+
     return(
         <div className="nav-bar-forum-container">
             <div className="name-channel-forum-container">
                 <BsHash color="#FFFFFF" />
-                <p className="name-channel">NavBarForum</p>
+                <p className="name-channel">{id}</p>
             </div>
             <div className="icons-search-and-people-container">
                 <button type="button">
