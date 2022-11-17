@@ -19,11 +19,11 @@ function Comments() {
     <div className="main-comments-container">
         <div className="message-container">
             {
-                comments.map((text: string) => (
-                    // <SentMessageBox key={text} />
-                    <div key={text} className="comments-container">
-                        {text}
-                    </div>
+                comments.map((text) => (
+                    <SentMessageBox key={text} />
+                    // <div key={text} className="message">
+                    //     {text}
+                    // </div>
                 ))
             }
         </div>
