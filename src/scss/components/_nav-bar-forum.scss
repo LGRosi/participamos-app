@@ -10,11 +10,23 @@
     .name-channel-forum-container {
         display: flex;
         align-items: center;
+        width: 62vw;
 
         .name-channel {
             color: $white;
             font-size: 13px;
             font-weight: 400;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .span-hash {
+                font-size: 15px;
+                font-weight: bold;
+            }
         }
     }
 

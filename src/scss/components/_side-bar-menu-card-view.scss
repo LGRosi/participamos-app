@@ -5,10 +5,7 @@
     text-align: center;
 
     .profile {
-        border-radius: 50%;
-        padding: 5px;
-        box-sizing: border-box;
-        max-width: 128px;
+        @include imageProfile(128px, 128px);
     }
 
     .profile-info {

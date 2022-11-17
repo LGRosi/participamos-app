@@ -21,7 +21,7 @@ button {
    font-family: var(--font-nunito);
 }
 
-textarea {
+textarea, input {
     font-family: var(--font-nunito);
     
     &:focus {

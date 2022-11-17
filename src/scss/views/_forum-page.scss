@@ -1,10 +1,16 @@
 .forum-page-container {
 
     .section-comments-container {
-        .description {
+
+        .title-forum-page {
+            margin-bottom: 10px;
+        }
+
+        .description-forum-page {
             font-size: 15px;
             color: grey;
             text-align: center;
+             box-shadow: 0px 10px 10px -13px rgba(0,0,0,0.5);
         }    
     }
 }
