@@ -13,7 +13,7 @@ function Modal({ closeModal }: any) {
                 <p className="modal-description">Agregá el nombre de un tema social que quieras debatir.</p>
                 <div className="modal-input-container">
                     <label className="modal-label-name">Nombre de un tema social</label>
-                    <input className="modal-input-name" placeholder="Nombre..." type="text" />
+                    <input className="modal-input-name" placeholder="Nombre del canal..." type="text" />
                 </div>
             </div>
             <div className="modal-footer">

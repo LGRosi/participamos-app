@@ -9,7 +9,6 @@ function NavBarForum() {
     const { id } = useParams();
 
     useEffect(() => {
-      console.log("Use Effect");
     }, [id]);
 
     return(
