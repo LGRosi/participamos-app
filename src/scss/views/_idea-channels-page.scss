@@ -1,27 +1,13 @@
 @import "../utilities/mixins";
 
-section {
-    padding-left: 12.5%;
+.div-add-channel-container {
+    display: flex;
+    justify-content: center;
 
-    h2 {
-        margin-top: 20px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 20px;
-        width: 200px;
-        margin-inline: auto;
-    }
-
-    .div-add-channel-container {
+    .button-add-channel {
         display: flex;
         justify-content: center;
-
-        .button-add-channel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            @include button(180px, 32px);
-        }
+        align-items: center;
+        @include button(180px, 32px);
     }
 }

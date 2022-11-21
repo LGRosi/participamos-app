@@ -4,19 +4,24 @@
 
 /* Components */
 @use './scss/components/channels';
+@use './scss/components/comments';
+@use './scss/components/modal';
+@use './scss/components/nav-bar-forum';
+@use './scss/components/sent-message-box';
 @use './scss/components/side-bar-menu-card-view';
 @use './scss/components/side-bar-menu-items-view';
-@use './scss/components/side-bar-menu';
 
 /* Layout */
 @use './scss/layouts/header';
+@use './scss/layouts/side-bar-menu';
 
 /* Themes */
-
+@use './scss/themes/light';
 
 /* Utilities */
 @use './scss/utilities/mixins';
 @use './scss/utilities/variables';
 
 /* Views */
+@use './scss/views/forum-page';
 @use './scss/views/idea-channels-page';

@@ -1,12 +1,9 @@
 import { Channel } from "../models/channels.interfaces";
 import "../scss/components/_channels.scss";
 import { BsHash } from "react-icons/bs";
-import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Channels() {
-
-    // const [channels, setChannels] = useState([]);
 
     const arrayChannels: Channel[] = [
         {
@@ -42,7 +39,7 @@ function Channels() {
             <ul className="ul-channel-container">
                 {
                     arrayChannels.map(channelItems => (
-                        <Link key={channelItems.id} to={`${channelItems.path}/chat`}>
+                        <Link key={channelItems.id} to={`canal-${channelItems.path}/foro`}>
                             <li key={channelItems.id} className="li-channel-element">
                                 <channelItems.icon color="#4e42d4" size={25} />
                                 <p className="p-title-element">

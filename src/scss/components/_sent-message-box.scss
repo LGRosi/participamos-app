@@ -1,0 +1,39 @@
+@import "../utilities/mixins";
+@import "../themes/light";
+
+.sent-message-box-container {
+    margin-block: 20px;
+    display: flex;
+    box-shadow: 0px 10px 10px -13px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    width: min(90%, 400px);
+    margin-inline: auto;
+    padding-block: 10px;
+
+    .image-profile {
+        @include imageProfile(40px, 40px);
+    }
+
+    .container-of-all-texts {
+        .name-and-date-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .name {
+                font-size: 14px;
+                color: $color-primary;
+                font-weight: 700;
+            }
+
+            .date {
+                font-size: 10px;
+                color: $grey;
+            }
+        }
+
+        .description-message {
+            font-size: 13px;
+        }
+    }
+}

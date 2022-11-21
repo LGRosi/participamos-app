@@ -1,0 +1,42 @@
+@import "../themes/light";
+
+
+.main-comments-container {
+
+    .message-container {
+        overflow: scroll;
+        height: 55vh;
+    }
+
+    .comments-box-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 15px;
+
+        .comment-textarea {
+            resize: none;
+            border-radius: 20px;
+            height: 30px;
+            border: 1.4px solid $black;
+            padding-left: 10px;
+            padding-top: 5px;
+            width: 80%;
+            margin-left: 5px;
+
+            &:focus {
+                border: 1.4px solid $color-primary;
+            }
+        }
+        
+        .comment-button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: $color-primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
