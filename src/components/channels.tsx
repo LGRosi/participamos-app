@@ -1,13 +1,9 @@
 import { Channel } from "../models/channels.interfaces";
 import "../scss/components/_channels.scss";
 import { BsHash } from "react-icons/bs";
-import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Channels() {
-
-    // const [channels, setChannels] = useState([]);
 
     const arrayChannels: Channel[] = [
         {
