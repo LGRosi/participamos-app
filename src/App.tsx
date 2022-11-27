@@ -56,7 +56,6 @@ function App() {
                     <Route path="/canales-de-ideas" element={<IdeaChannelsPage />} />
                     <Route path="/canales-de-ideas/:id/foro" element={<ForumPage />} />
                     <Route path="/grupos-de-ayuda" element={<SupportGroupsPage />} />
-
                     <Route path="*" element={<HomePage />} />
                 </Routes>
             </Suspense>
