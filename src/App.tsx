@@ -12,7 +12,7 @@ import Header from "./components/Header";
 import ForumPage from "./pages/ForumPage";
 import { Suspense, useEffect, useState } from "react";
 import LoginPage from "./pages/LoginPage";
-
+import * as authService from "./services/auth.sevices";
 
 function PrivateRoute({ isAuthenticated, element, ...props }: any) {
     return isAuthenticated ? element : <Navigate to={'/login'} />;
@@ -25,12 +25,25 @@ function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
-        if(user) {
+        const token = localStorage.getItem('token');
+        if (token) {
+            setIsAuthenticated(true);
+        }
+    }, [])
+
+    useEffect(() => {
+        if(isAuthenticated) {
             navigate('/');
         } else {
             navigate('/login');
         }
-    }, [user])
+    }, [isAuthenticated])
+
+    function onLogin(user: any, token: any) {
+        localStorage.setItem('token', token);
+        setUser(user);
+        setIsAuthenticated(true);
+    }
 
      const items: SideBarMenuItem[] = [
         {
@@ -63,51 +76,58 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
-      <Header />
-      <SideBarMenu items={items} card={card} />
-      <main>
-        <Suspense fallback={<p>Cargando...</p>}>
+        {
+            isAuthenticated ? 
+            <>
+                <Header />
+                <SideBarMenu items={items} card={card} />
+                <main>
+                    <Suspense fallback={<p>Cargando...</p>}>
+                        <Routes>
+                            <Route
+                                path="/perfil"
+                                element={
+                                    <PrivateRoute isAuthenticated={isAuthenticated} element={<ProfilePage />} />
+                                }
+                            />
+                            <Route 
+                                path="/" 
+                                element={
+                                    <PrivateRoute isAuthenticated={isAuthenticated} element={<HomePage />} />
+                                } 
+                            />
+                            <Route 
+                                path="/canales-de-ideas" 
+                                element={
+                                    <PrivateRoute isAuthenticated={isAuthenticated} element={<IdeaChannelsPage />} />
+                                } 
+                            />
+                            <Route 
+                                path="/canales-de-ideas/:id/foro" 
+                                element={
+                                    <PrivateRoute isAuthenticated={isAuthenticated} element={<ForumPage />} />
+                                } 
+                            />
+                            <Route 
+                                path="/grupos-de-ayuda" 
+                                element={
+                                    <PrivateRoute isAuthenticated={isAuthenticated} element={<SupportGroupsPage />} />
+                                } 
+                            />
+                            <Route 
+                                path="*" 
+                                element={<HomePage />} 
+                            />
+                        </Routes>
+                    </Suspense>
+                </main>
+            </> 
+            : 
             <Routes>
-                <Route
-                    path="/perfil"
-                    element={
-                        <PrivateRoute isAuthenticated={isAuthenticated} element={<ProfilePage />} />
-                    }
-                />
-                <Route 
-                    path="/" 
-                    element={
-                        <PrivateRoute isAuthenticated={isAuthenticated} element={<HomePage />} />
-                    } 
-                />
-                <Route 
-                    path="/canales-de-ideas" 
-                    element={
-                        <PrivateRoute isAuthenticated={isAuthenticated} element={<IdeaChannelsPage />} />
-                    } 
-                />
-                <Route 
-                    path="/canales-de-ideas/:id/foro" 
-                    element={
-                        <PrivateRoute isAuthenticated={isAuthenticated} element={<ForumPage />} />
-                    } 
-                />
-                <Route 
-                    path="/grupos-de-ayuda" 
-                    element={
-                        <PrivateRoute isAuthenticated={isAuthenticated} element={<SupportGroupsPage />} />
-                    } 
-                />
-                <Route 
-                    path="*" 
-                    element={<HomePage />} 
-                />
+                <Route path="/login" element={<LoginPage onLogin={onLogin} />} />
             </Routes>
-        </Suspense>
-      </main>
+        }
+        
     </>
   );
 }
