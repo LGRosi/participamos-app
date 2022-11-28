@@ -12,7 +12,7 @@ import Header from "./components/Header";
 import ForumPage from "./pages/ForumPage";
 import { Suspense, useEffect, useState } from "react";
 import LoginPage from "./pages/LoginPage";
-import * as authService from "./services/auth.sevices";
+
 
 function PrivateRoute({ isAuthenticated, element, ...props }: any) {
     return isAuthenticated ? element : <Navigate to={'/login'} />;
@@ -43,6 +43,11 @@ function App() {
         localStorage.setItem('token', token);
         setUser(user);
         setIsAuthenticated(true);
+    }
+    
+    function onLogout () {
+        localStorage.removeItem('token');
+        setIsAuthenticated(false);
     }
 
      const items: SideBarMenuItem[] = [
@@ -79,6 +84,7 @@ function App() {
         {
             isAuthenticated ? 
             <>
+                <button type="submit" onClick={onLogout}>Logout</button>
                 <Header />
                 <SideBarMenu items={items} card={card} />
                 <main>
