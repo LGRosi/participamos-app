@@ -1,4 +1,4 @@
-import { SideBarMenuCard } from "../models/sideBarMenu.interfaces";
+import { SideBarMenuCard } from "../interfaces/sideBarMenu.interfaces";
 import { classNames } from "../utils/classes";
 import "../scss/components/_side-bar-menu-card-view.scss";
 import { Link } from "react-router-dom";

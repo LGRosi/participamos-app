@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SideBarMenuCard, SideBarMenuItem } from "../models/sideBarMenu.interfaces";
+import { SideBarMenuCard, SideBarMenuItem } from "../interfaces/sideBarMenu.interfaces";
 import { classNames } from "../utils/classes";
 import { VscMenu } from "react-icons/vsc";
 import SideBarMenuCardView from "./SideBarMenuCardView";

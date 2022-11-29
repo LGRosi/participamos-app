@@ -2,7 +2,7 @@ import { FcConferenceCall, FcHome, FcIdea } from "react-icons/fc";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
 import { SideBarMenu } from "./components/SideBarMenu";
-import { SideBarMenuItem } from "./models/sideBarMenu.interfaces";
+import { SideBarMenuItem } from "./interfaces/sideBarMenu.interfaces";
 import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
 import IdeaChannelsPage from "./pages/IdeaChannelsPage";
@@ -84,7 +84,7 @@ function App() {
         {
             isAuthenticated ? 
             <>
-                <button type="submit" onClick={onLogout}>Logout</button>
+                {/* <button type="submit" onClick={onLogout}>Logout</button> */}
                 <Header />
                 <SideBarMenu items={items} card={card} />
                 <main>

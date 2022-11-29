@@ -1,4 +1,4 @@
-import { Channel } from "../models/channels.interfaces";
+import { Channel } from "../interfaces/channels.interfaces";
 import "../scss/components/_channels.scss";
 import { BsHash } from "react-icons/bs";
 import { Link } from "react-router-dom";

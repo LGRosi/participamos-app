@@ -1,0 +1,12 @@
+@import "../themes/light";
+@import "../utilities/mixins";
+
+.card-general-container {
+    @include card(90%);
+    height: 150px;
+
+    .description {
+        color: $grey;
+        font-size: 16px;
+    }
+}

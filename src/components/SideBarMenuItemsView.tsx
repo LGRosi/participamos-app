@@ -1,4 +1,4 @@
-import { SideBarMenuItem } from "../models/sideBarMenu.interfaces";
+import { SideBarMenuItem } from "../interfaces/sideBarMenu.interfaces";
 import { classNames } from "../utils/classes";
 import "../scss/components/_side-bar-menu-items-view.scss";
 import { NavLink } from "react-router-dom";
