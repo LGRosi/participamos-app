@@ -1,0 +1,25 @@
+@import "../themes/light";
+@import "../utilities/mixins";
+
+.card-general-container {
+    @include card(90%);
+    height: 140px;
+
+    .info-card-container {
+        height: 100%;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .title-card {
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+    
+        .description-card {
+            color: $grey;
+            font-size: 13px;
+        }
+    }
+}

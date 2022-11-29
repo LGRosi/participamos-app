@@ -3,6 +3,7 @@
 @use './scss/base/resets';
 
 /* Components */
+@use './scss/components/card';
 @use './scss/components/channels';
 @use './scss/components/comments';
 @use './scss/components/modal';
@@ -24,5 +25,6 @@
 
 /* Views */
 @use './scss/views/forum-page';
+@use './scss/views/home-page';
 @use './scss/views/idea-channels-page';
 @use './scss/views/login-page';

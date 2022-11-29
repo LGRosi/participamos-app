@@ -50,17 +50,6 @@
             }
         }
     }
-
-    .tooltip {
-        position: absolute;
-        background-color: $black;
-        left: 70px;
-        padding: 10px;
-        border-radius: 4px;
-        text-transform: capitalize;
-        display: none;
-        text-align: center;
-    }
 }
 
 @keyframes tooltip {
