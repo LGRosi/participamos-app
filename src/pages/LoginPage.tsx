@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as authService from "../services/auth.sevices";
 import logoParticipamos from "../assets/svg/icon-logo-participamos.svg";
+import { FcGoogle } from "react-icons/fc";
 
 
 function LoginPage({ onLogin }: any) {
@@ -33,7 +34,7 @@ function LoginPage({ onLogin }: any) {
             <div className="logo-container">
                 <img 
                     src={logoParticipamos} 
-                    width={40} 
+                    width={50} 
                     alt="Logo de la app Participamos" 
                 />
                 <h1 className="h1">Participamos</h1>
@@ -63,6 +64,18 @@ function LoginPage({ onLogin }: any) {
                     </div>
                     <button className="button-login" type="submit">Ingresar</button>
                 </form>
+                <div className="google-container">
+                    <p className="login-with">Iniciar sesión con</p>
+                    <div className="image-google-container">
+                        <FcGoogle size={30} />
+                    </div>
+                </div>
+                <div className="register-container">
+                    <p className="text-register">
+                        ¿Todavía no te registraste?
+                        <span className="span-register">Registrarse</span>
+                    </p>
+                </div>
             </div>
         </div>
     )
