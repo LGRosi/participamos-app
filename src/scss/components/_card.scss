@@ -3,10 +3,23 @@
 
 .card-general-container {
     @include card(90%);
-    height: 150px;
+    height: 140px;
 
-    .description {
-        color: $grey;
-        font-size: 16px;
+    .info-card-container {
+        height: 100%;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .title-card {
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+    
+        .description-card {
+            color: $grey;
+            font-size: 13px;
+        }
     }
 }

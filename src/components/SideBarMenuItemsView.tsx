@@ -29,7 +29,6 @@ function SideBarMenuItemsView({ item, isOpen }: SideBarMenuItemsViewProps) {
                     </div>
                 </nav>
             </NavLink>
-            { !isOpen ? <div className="tooltip">{item.label}</div> : '' }
         </div>
     );
 }
