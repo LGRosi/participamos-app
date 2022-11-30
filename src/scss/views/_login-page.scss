@@ -37,6 +37,19 @@
             margin-bottom: 35px;
             gap: 10px;
 
+            .errors-container {
+                width: min(100%, 330px);
+                background: #f6070709;
+                border: 1px solid $red;
+                border-radius: 3px;
+                padding-left: 10px;
+                height: 33px;
+                color: $red;
+                margin-inline: auto;
+                display: flex;
+                align-items: center;
+            }
+
             .email-container,
             .password-container {
                 display: flex;

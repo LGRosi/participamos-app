@@ -10,6 +10,10 @@ async function login(email: string, password: string) {
     .then(response => {
         if (response.ok) {
             return response.json();
+        } else if (response.status === 400) {
+            return response.json().then(error => {
+                throw error;
+            })
         } else {
             throw new Error('Error en la llamada');
         }
