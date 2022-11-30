@@ -6,8 +6,8 @@ import { FcGoogle } from "react-icons/fc";
 
 function LoginPage({ onLogin }: any) {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
 
     function handleSubmit(event: any) {
         event.preventDefault();
@@ -40,7 +40,7 @@ function LoginPage({ onLogin }: any) {
                 <h1 className="h1">Participamos</h1>
             </div>
             <div className="form-container">
-                <h2 className="h2">Ingresa a tu cuenta</h2>
+                <h2 className="h2">Ingresá a tu cuenta</h2>
                 <form className="form" onSubmit={handleSubmit}>
                     <div className="email-container">
                         <label className="label" htmlFor="email">Email</label>

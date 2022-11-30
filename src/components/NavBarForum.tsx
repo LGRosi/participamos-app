@@ -2,17 +2,24 @@ import { GoSearch } from "react-icons/go";
 import { BsPeopleFill } from "react-icons/bs";
 import "../scss/components/_nav-bar-forum.scss";
 import { useChannelContext } from "../providers/ChannelsProvider";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function NavBarForum() {
 
+    const { id } = useParams();
+
+    useEffect(() => {
+    }, [id]);
+
     //TODO: Finalizar la comunidación con el ChannelsProvider
-    const channel = useChannelContext();
+    // const channel = useChannelContext();
 
     return(
         <div className="nav-bar-forum-container">
             <div className="name-channel-forum-container">
                 <p className="name-channel">
-                    <span className="span-hash">#</span>
+                    <span className="span-hash"># {id}</span>
                     {/* {channel && channel.title} */}
                 </p>
             </div>
