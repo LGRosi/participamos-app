@@ -79,10 +79,8 @@ function LoginPage({ onLogin }: any) {
                     <button className="button-login" type="submit">Ingresar</button>
                 </form>
                 <div className="google-container">
-                    <p className="login-with">Iniciar sesión con</p>
-                    <div className="image-google-container">
-                        <FcGoogle size={30} />
-                    </div>
+                    <FcGoogle size={23} />
+                    <p className="login-with">Ingresá con Google</p>
                 </div>
                 <div className="register-container">
                     <p className="text-register">
