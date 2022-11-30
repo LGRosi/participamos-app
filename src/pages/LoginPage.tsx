@@ -79,7 +79,7 @@ function LoginPage({ onLogin }: any) {
                     <button className="button-login" type="submit">Ingresar</button>
                 </form>
                 <div className="google-container">
-                    <FcGoogle size={23} />
+                    <FcGoogle size={20} />
                     <p className="login-with">Ingresá con Google</p>
                 </div>
                 <div className="register-container">
