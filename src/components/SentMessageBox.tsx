@@ -7,9 +7,9 @@ function SentMessageBox() {
             <div className="container-of-all-texts">
                 <div className="name-and-date-container">
                     <p className="name">Lucas Rosi</p>
-                    <p className="date">17/11/2022</p>
+                    <p className="date">29/11/2022</p>
                 </div>
-                <p className="description-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fuga, molestiae ut officiis, autem atque eius voluptatibus beatae eaque odio doloribus quam dolore? Sunt, at fuga autem alias facilis accusantium?</p>
+                <p className="description-message">Priorizar la implementación o reparación de la calefacción para los colegios primarios y secundarios</p>
             </div>
         </div>
     )
