@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import ForumPage from "./pages/ForumPage";
 import { Suspense, useEffect, useState } from "react";
 import LoginPage from "./pages/LoginPage";
+import * as channelsService from "./services/channels.services";
 
 
 function PrivateRoute({ isAuthenticated, element, ...props }: any) {
@@ -50,7 +51,7 @@ function App() {
     //     setIsAuthenticated(false);
     // }
 
-     const items: SideBarMenuItem[] = [
+    const items: SideBarMenuItem[] = [
         {
             id: 1,
             label: 'Inicio',
