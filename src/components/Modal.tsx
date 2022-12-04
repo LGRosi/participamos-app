@@ -8,12 +8,12 @@ function Modal({ closeModal }: any) {
             <button className="modal-button-close" onClick={() => closeModal(false)} type="button">
                 <IoClose size={22} />
             </button>
-            <p className="modal-title">Nuevo canal</p>
+            <p className="modal-title">Agregar nuevo canal</p>
             <div className="modal-body">
-                <p className="modal-description">Agregá el nombre de un tema social que quieras debatir.</p>
+                <p className="modal-description">Agregá el nombre de un tema social que quieras debatir</p>
                 <div className="modal-input-container">
-                    <label className="modal-label-name">Nombre de un tema social</label>
-                    <input className="modal-input-name" placeholder="Nombre del canal..." type="text" />
+                    <label className="modal-label-name">Nombre del canal</label>
+                    <input className="modal-input-name" placeholder="Nombre del canal" type="text" />
                 </div>
             </div>
             <div className="modal-footer">

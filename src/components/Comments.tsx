@@ -31,7 +31,7 @@ function Comments() {
         <div className="comments-box-container">
             <textarea
                 autoComplete="off"
-                placeholder="Enviar un mensaje a la comunidad..."
+                placeholder="Enviar un mensaje a la comunidad"
                 className="comment-textarea"
                 onChange={handleChange}
                 value={comment}

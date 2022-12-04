@@ -26,19 +26,20 @@
         .modal-title {
            font-size: 18px;
            font-weight: bold;
-           margin-bottom: 15px;
+           margin-bottom: 20px;
            text-align: center;
         }
 
         .modal-body {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
 
            .modal-description {
-            color: $grey;
-            font-size: 14px;
-            text-align: center;
-            width: 220px;
-            margin-inline: auto;
+                color: $grey;
+                font-size: 14px;
+                text-align: center;
+                width: 220px;
+                margin-inline: auto;
+                margin-bottom: 25px;
            }
 
            .modal-input-container {
@@ -47,7 +48,8 @@
                 justify-content: center;
 
                 .modal-label-name {
-                    visibility: hidden;
+                    font-size: 14px;
+                    margin-bottom: 5px
                 }
 
                 .modal-input-name {
@@ -61,7 +63,7 @@
             justify-content: center;
 
             .modal-button-confirm {
-                @include button(50%, 30px);
+                @include button(60%, 30px);
             }
         }
     }

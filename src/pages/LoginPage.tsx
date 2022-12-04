@@ -40,7 +40,7 @@ function LoginPage({ onLogin }: any) {
                 <img 
                     src={logoParticipamos} 
                     width={50} 
-                    alt="Logo de la app Participamos" 
+                    alt="Logo de la app" 
                 />
                 <h1 className="h1">Participamos</h1>
             </div>

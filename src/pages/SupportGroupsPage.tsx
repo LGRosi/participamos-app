@@ -1,7 +1,7 @@
 function SupportGroupsPage() {
     return(
         <>
-            <h1>Grupos de ayuda</h1>
+            <h2>Grupos de ayuda</h2>
         </>
     )
 
