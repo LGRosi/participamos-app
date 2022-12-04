@@ -10,6 +10,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     z-index: 100;
     @include transition(width);
 
@@ -21,15 +22,24 @@
         width: 45px;
     }
 
-    .menu-button {
-        display: flex;
-        justify-content: flex-end;
+    .navigate-container {
 
-        .hamburger-button {
-            color: $white;
-            padding: 10px;
-            width: 60px;
+        .menu-button {
+            display: flex;
+            justify-content: flex-end;
+    
+            .hamburger-button {
+                color: $white;
+                padding: 10px;
+                width: 60px;
+            }
         }
     }
 
+
+    .logout-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
 }

@@ -45,10 +45,10 @@ function App() {
         setIsAuthenticated(true);
     }
     
-    function onLogout () {
-        localStorage.removeItem('token');
-        setIsAuthenticated(false);
-    }
+    // function onLogout () {
+    //     localStorage.removeItem('token');
+    //     setIsAuthenticated(false);
+    // }
 
      const items: SideBarMenuItem[] = [
         {
@@ -84,7 +84,6 @@ function App() {
         {
             isAuthenticated ? 
             <>
-                {/* <button type="submit" onClick={onLogout}>Logout</button> */}
                 <Header />
                 <SideBarMenu items={items} card={card} />
                 <main>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import * as authService from "../services/auth.sevices";
 import logoParticipamos from "../assets/svg/icon-logo-participamos.svg";
 import { FcGoogle } from "react-icons/fc";
@@ -8,6 +8,7 @@ function LoginPage({ onLogin }: any) {
 
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [errors, setErrors] = useState<string[]>([]);
 
     function handleSubmit(event: any) {
         event.preventDefault();
@@ -17,7 +18,11 @@ function LoginPage({ onLogin }: any) {
                 onLogin(user, token);
             })
             .catch(err => {
-                alert('Login incorrecto');
+                if (err.errors) {
+                    setErrors(err.errors);
+                } else {
+                    setErrors([err.message]);
+                }
             });
     }
 
@@ -42,6 +47,15 @@ function LoginPage({ onLogin }: any) {
             <div className="form-container">
                 <h2 className="h2">Ingresá a tu cuenta</h2>
                 <form className="form" onSubmit={handleSubmit}>
+                    <React.Fragment>
+                        {
+                            errors.map((errors, index) => 
+                                <div className="errors-container" key={index}>
+                                    <small className="errors">{ errors }</small>
+                                </div>
+                            )
+                        }
+                    </React.Fragment>
                     <div className="email-container">
                         <label className="label" htmlFor="email">Email</label>
                         <input 
@@ -65,10 +79,8 @@ function LoginPage({ onLogin }: any) {
                     <button className="button-login" type="submit">Ingresar</button>
                 </form>
                 <div className="google-container">
-                    <p className="login-with">Iniciar sesión con</p>
-                    <div className="image-google-container">
-                        <FcGoogle size={30} />
-                    </div>
+                    <FcGoogle size={20} />
+                    <p className="login-with">Ingresá con Google</p>
                 </div>
                 <div className="register-container">
                     <p className="text-register">

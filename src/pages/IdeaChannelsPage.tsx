@@ -1,8 +1,8 @@
 import "../scss/views/_idea-channels-page.scss";
 import { BsPlus } from 'react-icons/bs';
-import Channels from "../components/channels";
 import Modal from "../components/Modal";
 import { useState } from "react";
+import Channels from "../components/channels";
 
 function IdeaChannelsPage() {
 
