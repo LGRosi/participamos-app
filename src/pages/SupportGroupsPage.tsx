@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { SupportGroups } from "../interfaces/supportGroups.interfaces";
 
 function SupportGroupsPage() {
 
+    const [search, setSearch] = useState<string>('');
+
     const arraySupportGroups: SupportGroups[] = [
         {
             id: 1,
-            title: 'Agrupación 1',
+            title: 'Hola mundo',
             description: 'dsfdsfdsfdsf',
             image: 'sdf'
         },
@@ -26,39 +29,12 @@ function SupportGroupsPage() {
             title: 'Agrupación 4',
             description: 'sdfdsfdsfds',
             image: 'dsfds'
-        },
-        {
-            id: 4,
-            title: 'Agrupación 4',
-            description: 'sdfdsfdsfds',
-            image: 'dsfds'
-        },
-        {
-            id: 4,
-            title: 'Agrupación 4',
-            description: 'sdfdsfdsfds',
-            image: 'dsfds'
-        },
-        {
-            id: 4,
-            title: 'Agrupación 4',
-            description: 'sdfdsfdsfds',
-            image: 'dsfds'
-        },
-        {
-            id: 4,
-            title: 'Agrupación 4',
-            description: 'sdfdsfdsfds',
-            image: 'dsfds'
-        },
-        {
-            id: 4,
-            title: 'Agrupación 4',
-            description: 'sdfdsfdsfds',
-            image: 'dsfds'
-        },
+        }
     ];
 
+    function handleChange(e: any) {
+        setSearch(e.target.value);
+    }
 
     return(
         <section>
@@ -70,12 +46,19 @@ function SupportGroupsPage() {
                 <input 
                     className="input-search"
                     type="text"
-                    value=""
+                    value={search}
+                    onChange={handleChange}
                     placeholder="Búsqueda de agrupaciones sociales" 
                 />
             </form>
             {
-                arraySupportGroups.map(groupsItems => (
+                arraySupportGroups
+                .filter(elementSearch => {
+                    return search.toLowerCase() === ''
+                    ? elementSearch
+                    : elementSearch.title.toLowerCase().includes(search);
+                })
+                .map(groupsItems => (
                     <div key={groupsItems.id} className="support-groups-general-container">
                         <div className="info-support-groups-container">
                             <h3 className="title-support-groups">{groupsItems.title}</h3>
