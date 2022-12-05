@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { GoSearch } from "react-icons/go";
 import { SupportGroups } from "../interfaces/supportGroups.interfaces";
+import imageDonationOne from "../assets/images/donation-one.jpg";
+import imageDonationTwo from "../assets/images/donation-two.jpg";
+import imageDonationThree from "../assets/images/donate-three.jpg";
+import imageDonationFour from "../assets/images/donation-four.jpg";
 
 function SupportGroupsPage() {
 
@@ -9,27 +13,27 @@ function SupportGroupsPage() {
     const arraySupportGroups: SupportGroups[] = [
         {
             id: 1,
-            title: 'Hola mundo',
-            description: 'dsfdsfdsfdsf',
-            image: 'sdf'
+            title: 'Grupo Donamos',
+            description: 'Somos una agrupación de ayuda y donación voluntaria',
+            image: imageDonationOne
         },
         {
             id: 2,
-            title: 'Agrupación 2',
-            description: 'dfdsfdsfdsf',
-            image: 'sdf'
+            title: 'Grupo Ayudemos',
+            description: 'Fomentamos la participación de las personas para la donación',
+            image: imageDonationTwo
         },
         {
             id: 3,
-            title: 'Agrupación 3',
-            description: 'sdfdsfsdf',
-            image: 'sdf'
+            title: 'Calle Solidaria',
+            description: 'Somos un grupo con encuentros en la vía pública para ayudar a las personas más necesitadas',
+            image: imageDonationThree
         },
         {
             id: 4,
-            title: 'Agrupación 4',
-            description: 'sdfdsfdsfds',
-            image: 'dsfds'
+            title: 'Comedor Comunitario',
+            description: 'Tenemos varias sedes de comedores comunitarios para todas las personas que necesiten un plato de comida',
+            image: imageDonationFour
         }
     ];
 
@@ -37,45 +41,61 @@ function SupportGroupsPage() {
         setSearch(e.target.value);
     }
 
-    return(
-        <section>
+    return (
+        <section className="support-groups-general-container">
             <h2>Grupos de ayuda</h2>
-            <p className="sub-title-support-groups">Acá podés encontrar todos los grupos relacionados a la ayuda social</p>
+            <p className="sub-title-support-groups">
+                Acá podés encontrar todos los grupos relacionados a la ayuda social
+            </p>
 
-             <form className="form-support-groups-search">
-                    <label className="label-support-groups-search" htmlFor="search">Búsqueda de grupos de ayuda</label>
-                    <div className="input-support-groups-container">
-                        <input 
-                            className="input-support-groups-search"
-                            type="text"
-                            value={search}
-                            onChange={handleChange}
-                            placeholder="Búsqueda de grupos de ayuda"
-                        />
-                        <GoSearch className="icon-support-groups-GoSearch" color="#4e42d4" size={16} />
-                    </div>
-                </form>
+            <form className="form-support-groups-search">
+                <label className="label-support-groups-search" htmlFor="search">
+                    Búsqueda de grupos de ayuda
+                </label>
+                <div className="input-support-groups-container">
+                    <input
+                        className="input-support-groups-search"
+                        type="text"
+                        value={search}
+                        onChange={handleChange}
+                        placeholder="Búsqueda de grupos de ayuda"
+                    />
+                    <GoSearch
+                        className="icon-support-groups-GoSearch"
+                        color="#4e42d4"
+                        size={16}
+                    />
+                </div>
+            </form>
             {
-                arraySupportGroups
-                .filter(elementSearch => {
-                    return search.toLowerCase() === ''
-                        ? elementSearch
-                        : elementSearch.title.toLowerCase().includes(search);
+            arraySupportGroups
+                .filter((elementSearch) => {
+                    return search.toLowerCase() === ""
+                    ? elementSearch
+                    : elementSearch.title.toLowerCase().includes(search);
                 })
-                .map(groupsItems => (
-                    <div key={groupsItems.id} className="support-groups-general-container">
+                .map((groupsItems) => (
+                    <div key={groupsItems.id} className="card-support-groups-container">
                         <div className="info-support-groups-container">
                             <h3 className="title-support-groups">{groupsItems.title}</h3>
-                            <p className="description-support-groups">{groupsItems.description}</p>
+                            <p className="description-support-groups">
+                            {groupsItems.description}
+                            </p>
                         </div>
                         <div className="image-support-groups-container">
-                            <img src={groupsItems.image} width="" alt="" />
+                            <img
+                                className="image-support-groups"
+                                src={groupsItems.image} 
+                                width="250" 
+                                alt={groupsItems.title} 
+                            />
                         </div>
+                        <button className="button-more-information" type="button">Más información</button>
                     </div>
                 ))
             }
         </section>
-    )
+    );
 
 }
 
