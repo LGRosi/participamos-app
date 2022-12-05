@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GoSearch } from "react-icons/go";
 import { SupportGroups } from "../interfaces/supportGroups.interfaces";
 
 function SupportGroupsPage() {
@@ -39,18 +40,21 @@ function SupportGroupsPage() {
     return(
         <section>
             <h2>Grupos de ayuda</h2>
-            <p>Acá podés encontrar todos los grupos de ayuda social en la cercanía de tu hogar</p>
+            <p className="sub-title-support-groups">Acá podés encontrar todos los grupos relacionados a la ayuda social</p>
 
-            <form>
-                <label className="label-search" htmlFor="search">Búsqueda de agrupaciones sociales</label>
-                <input 
-                    className="input-search"
-                    type="text"
-                    value={search}
-                    onChange={handleChange}
-                    placeholder="Búsqueda de agrupaciones sociales" 
-                />
-            </form>
+             <form className="form-support-groups-search">
+                    <label className="label-support-groups-search" htmlFor="search">Búsqueda de grupos de ayuda</label>
+                    <div className="input-support-groups-container">
+                        <input 
+                            className="input-support-groups-search"
+                            type="text"
+                            value={search}
+                            onChange={handleChange}
+                            placeholder="Búsqueda de grupos de ayuda"
+                        />
+                        <GoSearch className="icon-support-groups-GoSearch" color="#4e42d4" size={16} />
+                    </div>
+                </form>
             {
                 arraySupportGroups
                 .filter(elementSearch => {

@@ -1,0 +1,62 @@
+@import "../themes/light";
+@import "../utilities/mixins";
+
+.sub-title-support-groups {
+    text-align: center;
+    color: #051a26;
+    width: 270px;
+    margin-bottom: 20px;
+}
+
+.form-support-groups-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .label-support-groups-search {
+        font-size: 0px;
+    }
+
+    .input-support-groups-container {
+        width: min(90%, 330px);
+        margin-bottom: -10px;
+
+        .input-support-groups-search {
+            padding-inline: 10px 50px;
+            height: 33px;
+            border-radius: 25px;
+            border: 1px solid $color-primary;
+            width: 100%;
+        }
+
+        .icon-support-groups-GoSearch {
+            position: relative;
+            left: 89%;
+            bottom: 25px;
+        }
+    }
+}
+
+.support-groups-general-container {
+    @include card(90%);
+    height: 140px;
+
+    .info-support-groups-container {
+        height: 100%;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .title-support-groups {
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+    
+        .description-support-groups {
+            color: $grey;
+            font-size: 14px;
+        }
+    }
+}
