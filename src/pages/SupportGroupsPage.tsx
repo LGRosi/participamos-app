@@ -41,7 +41,7 @@ function SupportGroupsPage() {
             <h2>Grupos de ayuda</h2>
             <p>Acá podés encontrar todos los grupos de ayuda social en la cercanía de tu hogar</p>
 
-            <form action="#">
+            <form>
                 <label className="label-search" htmlFor="search">Búsqueda de agrupaciones sociales</label>
                 <input 
                     className="input-search"
@@ -55,8 +55,8 @@ function SupportGroupsPage() {
                 arraySupportGroups
                 .filter(elementSearch => {
                     return search.toLowerCase() === ''
-                    ? elementSearch
-                    : elementSearch.title.toLowerCase().includes(search);
+                        ? elementSearch
+                        : elementSearch.title.toLowerCase().includes(search);
                 })
                 .map(groupsItems => (
                     <div key={groupsItems.id} className="support-groups-general-container">
