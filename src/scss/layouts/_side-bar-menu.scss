@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 100;
+    position: fixed;
     @include transition(width);
 
     &.expanded {

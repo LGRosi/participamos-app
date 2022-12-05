@@ -16,7 +16,7 @@ function ForumPage() {
             <NavBarForum />
             <section className="section-comments-container">
                 <h2 className="title-forum-page">¡Te damos la bienvenida al {id}!</h2>
-                <p className="description-forum-page">Aquí puedes empezar a escribir tus ideas.</p>
+                <p className="description-forum-page">Acá podés empezar a escribir tus ideas</p>
                 <Comments /> 
             </section>
         </div>
