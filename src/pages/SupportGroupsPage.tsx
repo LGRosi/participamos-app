@@ -5,6 +5,7 @@ import imageDonationOne from "../assets/images/donation-one.jpg";
 import imageDonationTwo from "../assets/images/donation-two.jpg";
 import imageDonationThree from "../assets/images/donate-three.jpg";
 import imageDonationFour from "../assets/images/donation-four.jpg";
+import { BsPlus } from "react-icons/bs";
 
 function SupportGroupsPage() {
 
@@ -47,6 +48,15 @@ function SupportGroupsPage() {
             <p className="sub-title-support-groups">
                 Acá podés encontrar todos los grupos relacionados a la ayuda social
             </p>
+            <div className="div-add-support-groups-container">
+                <button
+                    className="button-add-support-groups"
+                    type="button"
+                >
+                    <BsPlus size={23} />
+                    Registrarse como grupo de ayuda
+                </button>
+            </div>
 
             <form className="form-support-groups-search">
                 <label className="label-support-groups-search" htmlFor="search">

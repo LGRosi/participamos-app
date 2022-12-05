@@ -11,6 +11,19 @@
         margin-bottom: 20px;
         margin-inline: auto;
     }
+
+    .div-add-support-groups-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+
+        .button-add-support-groups {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include button(280px, 32px);
+        }
+    }
     
     .form-support-groups-search {
         display: flex;
@@ -23,7 +36,7 @@
         }
     
         .input-support-groups-container {
-            width: min(90%, 330px);
+            width: min(90%, 280px);
             margin-bottom: -10px;
     
             .input-support-groups-search {
