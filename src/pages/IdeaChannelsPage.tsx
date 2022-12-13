@@ -8,9 +8,9 @@ import Channels from "../components/channels";
 function IdeaChannelsPage() {
     const [openModal, setOpenModal] = useState(false);
 
-    useEffect(() => {
-      channelsService.channels();
-    }, []);
+    // useEffect(() => {
+    //   channelsService.channels();
+    // }, []);
 
     return (
       <section>

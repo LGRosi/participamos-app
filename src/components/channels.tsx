@@ -2,46 +2,23 @@ import { Channel } from "../interfaces/channels.interfaces";
 import "../scss/components/_channels.scss";
 import { BsHash } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoSearch } from "react-icons/go";
-
 
 function Channels() {
 
     const [search, setSearch] = useState<string>("");
+    const [stateChannel, setStateChannel] = useState<Channel[]>([]);
 
-    const arrayChannels: Channel[] = [
-        {
-            id: 1,
-            icon: BsHash,
-            title: 'Educación',
-            path: 'educacion'
-        },
-        {
-            id: 2,
-            icon: BsHash,
-            title: 'Salud',
-            path: 'salud'
-        },
-        {
-            id: 3,
-            icon: BsHash,
-            title: 'Donaciones',
-            path: 'donaciones'
-        },
-        {
-            id: 4,
-            icon: BsHash,
-            title: 'Transporte Público',
-            path: 'transporte-publico'
-        },
-        {
-            id: 5,
-            icon: BsHash,
-            title: 'Calles',
-            path: 'calles'
-        }
-    ];
+    useEffect(() => {
+        getDataChannels();
+    }, []);
+
+    async function getDataChannels() {
+        const dataChannels = await fetch("http://localhost:4000/api/channels");
+        const channels = await dataChannels.json();
+        setStateChannel(channels);
+    }
 
     function handleChange(e: any) {
         setSearch(e.target.value);
@@ -67,18 +44,18 @@ function Channels() {
                 </form>
                 <ul className="ul-channel-container">
                     {
-                        arrayChannels
-                        .filter(elementSearch => {
+                        stateChannel
+                        .filter((elementSearch: any) => {
                             return search.toLowerCase() === ""
                                 ? elementSearch
-                                : elementSearch.title.toLowerCase().includes(search);
+                                : elementSearch.name.toLowerCase().includes(search);
                         })
-                        .map(channelItems => (
-                            <Link key={channelItems.id} to={`canal-${channelItems.path}/foro`}>
-                                <li key={channelItems.id} className="li-channel-element">
-                                    <channelItems.icon color="#4e42d4" size={25} />
+                        .map((channelItems: any) => (
+                            <Link key={channelItems._id} to={`Canal ${channelItems.name}/foro`}>
+                                <li key={channelItems._id} className="li-channel-element">
+                                    <BsHash color="#4e42d4" size={25} />
                                     <p className="p-title-element">
-                                        { channelItems.title }
+                                        { channelItems.name }
                                     </p>
                                 </li>
                             </Link>
