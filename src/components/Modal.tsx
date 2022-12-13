@@ -1,7 +1,7 @@
-import {IoClose} from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import "../scss/components/_modal.scss";
 
-function Modal({ closeModal }: any) {
+function Modal({ closeModal }: any ) {
     return (
       <div className="modal-background">
         <div className="modal-container">

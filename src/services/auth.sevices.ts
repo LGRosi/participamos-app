@@ -7,13 +7,12 @@ async function login(email: string, password: string) {
         body: JSON.stringify({ email, password })
     })
 
-    .then(response => {
+    .then(async (response): Promise<any> => {
         if (response.ok) {
             return response.json();
         } else if (response.status === 400) {
-            return response.json().then(error => {
-                throw error;
-            })
+            const error = await response.json();
+            throw error;
         } else {
             throw new Error('Error en la llamada');
         }
@@ -29,7 +28,7 @@ async function logout(token: string) {
         body: JSON.stringify({ token })
     })
 
-    .then(response => {
+    .then((response): Promise<string> => {
         if (response.ok) {
             return response.json();
         } else {

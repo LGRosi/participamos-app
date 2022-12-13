@@ -2,11 +2,10 @@ import "../scss/views/_idea-channels-page.scss";
 import { BsPlus } from 'react-icons/bs';
 import Modal from "../components/Modal";
 import { useEffect, useState } from "react";
-import * as channelsService from "../services/channels.services";
 import Channels from "../components/channels";
 
 function IdeaChannelsPage() {
-    const [openModal, setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState<boolean>(false);
 
     // useEffect(() => {
     //   channelsService.channels();
@@ -19,9 +18,9 @@ function IdeaChannelsPage() {
           <button
             type="button"
             className="button-add-channel"
-            onClick={() => {
-                setOpenModal(true);
-            }}
+            onClick={
+                () => {setOpenModal(true)}
+            }
           >
             <BsPlus size={23} />
             Agregar un canal
