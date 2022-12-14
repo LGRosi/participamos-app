@@ -1,8 +1,8 @@
 import "../scss/views/_idea-channels-page.scss";
 import { BsPlus } from 'react-icons/bs';
 import { useEffect, useState } from "react";
-import Channels from "../components/channels";
 import ModalCreateChannels from "../components/ModalCreateChannels";
+import Channels from "../components/Channels";
 
 function IdeaChannelsPage() {
     const [openModal, setOpenModal] = useState<boolean>(false);
