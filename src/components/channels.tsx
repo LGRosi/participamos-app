@@ -51,7 +51,7 @@ function Channels() {
                                 : elementSearch.name.toLowerCase().includes(search);
                         })
                         .map((channelItems: any) => (
-                            <Link key={channelItems._id} to={`Canal ${channelItems.name}/foro`}>
+                            <Link key={channelItems._id} to={`${channelItems.name}/foro`}>
                                 <li key={channelItems._id} className="li-channel-element">
                                     <BsHash color="#4e42d4" size={25} />
                                     <p className="p-title-element">

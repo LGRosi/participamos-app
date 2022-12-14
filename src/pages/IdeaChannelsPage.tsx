@@ -1,8 +1,8 @@
 import "../scss/views/_idea-channels-page.scss";
 import { BsPlus } from 'react-icons/bs';
-import Modal from "../components/Modal";
 import { useEffect, useState } from "react";
 import Channels from "../components/channels";
+import ModalCreateChannels from "../components/ModalCreateChannels";
 
 function IdeaChannelsPage() {
     const [openModal, setOpenModal] = useState<boolean>(false);
@@ -27,7 +27,7 @@ function IdeaChannelsPage() {
           </button>
         </div>
         {
-            openModal && <Modal closeModal={setOpenModal} />
+            openModal && <ModalCreateChannels closeModal={setOpenModal} />
         }
         <div>
             <Channels />
