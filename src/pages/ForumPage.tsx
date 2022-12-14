@@ -6,7 +6,7 @@ import "../scss/views/_forum-page.scss"
 
 function ForumPage() {
 
-    const { id } = useParams();
+    const { id } = useParams<string>();
 
     useEffect(() => {
     }, [id]);

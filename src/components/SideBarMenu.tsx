@@ -31,22 +31,26 @@ export function SideBarMenu({ items, card }: SideBarMenuProps) {
         <div className="navigate-container">
             <div className="menu-button">
                 <button
-                className="hamburger-button"
-                type="button"
-                onClick={handleClick}
+                    className="hamburger-button"
+                    type="button"
+                    onClick={handleClick}
                 >
-                <VscMenu size="22" />
+                    <VscMenu size="22" />
                 </button>
             </div>
             <SideBarMenuCardView card={card} isOpen={isOpen} />
-            {items.map((item) => (
-                <SideBarMenuItemsView key={item.id} item={item} isOpen={isOpen} />
-            ))}
+            {
+                items.map(
+                    (item) => (
+                        <SideBarMenuItemsView key={item.id} item={item} isOpen={isOpen} />
+                    )
+                )
+            }
         </div>
 
         <div className="logout-container">
             <button type="submit" onClick={onLogout}>
-            <CgLogOut size={25} color="white" />
+                <CgLogOut size={25} color="white" />
             </button>
         </div>
     </div>

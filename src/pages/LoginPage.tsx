@@ -49,7 +49,8 @@ function LoginPage({ onLogin }: any) {
                 <form className="form" onSubmit={handleSubmit}>
                     <React.Fragment>
                         {
-                            errors.map((errors, index) => 
+                            errors.map(
+                                (errors: string, index: number) => 
                                 <div className="errors-container" key={index}>
                                     <small className="errors">{ errors }</small>
                                 </div>

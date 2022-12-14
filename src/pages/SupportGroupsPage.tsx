@@ -100,13 +100,17 @@ function SupportGroupsPage() {
                                 alt={groupsItems.title} 
                             />
                         </div>
-                        <button className="button-more-information" type="button">Más información</button>
+                        <button 
+                            className="button-more-information" 
+                            type="button"
+                        >
+                            Más información
+                        </button>
                     </div>
                 ))
             }
         </section>
     );
-
 }
 
 export default SupportGroupsPage;
