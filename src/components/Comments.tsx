@@ -10,9 +10,8 @@ function Comments() {
     setComments((comments) => [...comments, comment]);
   };
 
-  const handleChange = (e: any) => {
-    setComment(e.target.value);
-    
+  const handleChange = (eventComment: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setComment(eventComment.target.value);
   };
 
   return (
