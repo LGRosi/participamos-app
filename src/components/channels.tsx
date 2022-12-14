@@ -20,8 +20,8 @@ function Channels() {
         setStateChannel(channels);
     }
 
-    function handleChange(e: any) {
-        setSearch(e.target.value);
+    function handleChange(eventSearch: React.ChangeEvent<HTMLInputElement>) {
+      setSearch(eventSearch.target.value);
     }
 
 

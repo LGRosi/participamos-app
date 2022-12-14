@@ -10,8 +10,8 @@ function LoginPage({ onLogin }: any) {
     const [password, setPassword] = useState<string>('');
     const [errors, setErrors] = useState<string[]>([]);
 
-    function handleSubmit(event: any) {
-        event.preventDefault();
+    function handleSubmit(eventSubmit: React.ChangeEvent<HTMLFormElement>) {
+        eventSubmit.preventDefault();
 
         authService.login(email, password)
             .then(({user, token}) => {
@@ -26,12 +26,12 @@ function LoginPage({ onLogin }: any) {
             });
     }
 
-    function handleChangeEmail(event: any) {
-        setEmail(event.target.value);
+    function handleChangeEmail(eventEmail: React.ChangeEvent<HTMLInputElement>) {
+        setEmail(eventEmail.target.value);
     }
 
-    function handleChangePassword(event: any) {
-        setPassword(event.target.value);
+    function handleChangePassword(eventPassword: React.ChangeEvent<HTMLInputElement>) {
+        setPassword(eventPassword.target.value);
     }
 
     return(
