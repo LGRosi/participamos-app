@@ -7,10 +7,6 @@ import Channels from "../components/Channels";
 function IdeaChannelsPage() {
     const [openModal, setOpenModal] = useState<boolean>(false);
 
-    // useEffect(() => {
-    //   channelsService.channels();
-    // }, []);
-
     return (
       <section>
         <h2>Elegí un canal para aportar tus ideas</h2>
