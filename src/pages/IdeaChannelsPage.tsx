@@ -1,15 +1,11 @@
 import "../scss/views/_idea-channels-page.scss";
 import { BsPlus } from 'react-icons/bs';
-import Modal from "../components/Modal";
-import { useEffect, useState } from "react";
-import Channels from "../components/channels";
+import { useState } from "react";
+import ModalCreateChannels from "../components/ModalCreateChannels";
+import Channels from "../components/Channels";
 
 function IdeaChannelsPage() {
     const [openModal, setOpenModal] = useState<boolean>(false);
-
-    // useEffect(() => {
-    //   channelsService.channels();
-    // }, []);
 
     return (
       <section>
@@ -27,7 +23,7 @@ function IdeaChannelsPage() {
           </button>
         </div>
         {
-            openModal && <Modal closeModal={setOpenModal} />
+            openModal && <ModalCreateChannels closeModal={setOpenModal} />
         }
         <div>
             <Channels />

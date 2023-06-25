@@ -8,14 +8,13 @@ function ForumPage() {
 
     const { id } = useParams<string>();
 
-    useEffect(() => {
-    }, [id]);
+    useEffect(() => {}, [id]);
 
     return(
         <div className="forum-page-container">
             <NavBarForum />
             <section className="section-comments-container">
-                <h2 className="title-forum-page">¡Te damos la bienvenida al {id}!</h2>
+                <h2 className="title-forum-page">¡Te damos la bienvenida al canal {id}!</h2>
                 <p className="description-forum-page">Acá podés empezar a escribir tus ideas</p>
                 <Comments /> 
             </section>

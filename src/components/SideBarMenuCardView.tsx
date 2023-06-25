@@ -1,12 +1,7 @@
-import { SideBarMenuCard } from "../interfaces/sideBarMenu.interfaces";
 import { classNames } from "../utils/classes";
 import "../scss/components/_side-bar-menu-card-view.scss";
 import { Link } from "react-router-dom";
-
-interface SideBarMenuCardViewProps {
-    card: SideBarMenuCard;
-    isOpen: boolean;
-}
+import { SideBarMenuCardViewProps } from "../interfaces/sideBarMenuCardViewProps.interfaces";
 
 function SideBarMenuCardView({ card, isOpen }: SideBarMenuCardViewProps) {
     return(
