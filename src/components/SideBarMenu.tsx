@@ -1,16 +1,11 @@
 import { useState } from "react";
-import { SideBarMenuCard, SideBarMenuItem } from "../interfaces/sideBarMenu.interfaces";
 import { classNames } from "../utils/classes";
 import { VscMenu } from "react-icons/vsc";
 import SideBarMenuCardView from "./SideBarMenuCardView";
 import SideBarMenuItemsView from "./SideBarMenuItemsView";
 import "../scss/layouts/_side-bar-menu.scss";
 import { CgLogOut } from "react-icons/cg";
-
-interface SideBarMenuProps {
-    items: SideBarMenuItem[];
-    card: SideBarMenuCard;
-}
+import { SideBarMenuProps } from "../interfaces/sideBarMenuProps.interfaces";
 
 export function SideBarMenu({ items, card }: SideBarMenuProps) {
   const [isOpen, setIsOpen] = useState<boolean>(true);

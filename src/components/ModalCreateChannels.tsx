@@ -1,7 +1,8 @@
 import { IoClose } from "react-icons/io5";
 import "../scss/components/_modal-create-channels.scss";
+import { ModalCreateChannelsProps } from "../interfaces/modalCreateChannelsProps.interfaces";
 
-function ModalCreateChannels({ closeModal }: any ) {
+function ModalCreateChannels({ closeModal }: ModalCreateChannelsProps ) {
     return (
       <div className="modal-background">
         <div className="modal-container">

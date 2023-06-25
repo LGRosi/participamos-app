@@ -8,8 +8,7 @@ function ForumPage() {
 
     const { id } = useParams<string>();
 
-    useEffect(() => {
-    }, [id]);
+    useEffect(() => {}, [id]);
 
     return(
         <div className="forum-page-container">

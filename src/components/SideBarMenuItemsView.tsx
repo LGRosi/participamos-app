@@ -1,13 +1,8 @@
-import { SideBarMenuItem } from "../interfaces/sideBarMenu.interfaces";
 import { classNames } from "../utils/classes";
 import "../scss/components/_side-bar-menu-items-view.scss";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-
-interface SideBarMenuItemsViewProps {
-    item: SideBarMenuItem;
-    isOpen: boolean;
-}
+import { SideBarMenuItemsViewProps } from "../interfaces/sideBarMenuItemsViewProps.interfaces";
 
 function SideBarMenuItemsView({ item, isOpen }: SideBarMenuItemsViewProps) {
 

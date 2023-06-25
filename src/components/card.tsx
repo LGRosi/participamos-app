@@ -1,6 +1,6 @@
 import { Cards } from "../interfaces/cards.interfaces";
 
-function Card ({ title, description, img, width, alt }: Cards) {
+function Card({ title, description, img, width, alt }: Cards) {
     return(
         <article className="card-general-container">
             <div className="info-card-container">
