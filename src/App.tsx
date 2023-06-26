@@ -6,14 +6,14 @@ import { SideBarMenuItem } from "./interfaces/sideBarMenu.interfaces";
 import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
 import IdeaChannelsPage from "./pages/IdeaChannelsPage";
-import SupportGroupsPage from "./pages/SupportGroupsPage";
+import SupportGroupsPage from "./pages/SupportGroupsPage/SupportGroupsPage";
 import profileImage from "./assets/images/profile.png";
 import Header from "./components/Header";
 import ForumPage from "./pages/ForumPage";
 import { Suspense, useEffect, useState } from "react";
 import LoginPage from "./pages/LoginPage";
 import { CardProfile } from "./interfaces/cardProfile.interfaces";
-
+import AddSupportGroupsPage from "./pages/SupportGroupsPage/AddSupportGroupsPage";
 
 function PrivateRoute({ isAuthenticated, element, ...props }: any) {
     return isAuthenticated ? element : <Navigate to={'/login'} />;
@@ -113,6 +113,12 @@ function App() {
                                 path="/grupos-de-ayuda" 
                                 element={
                                     <PrivateRoute isAuthenticated={isAuthenticated} element={<SupportGroupsPage />} />
+                                } 
+                            />
+                            <Route 
+                                path="/crear-grupos-de-ayuda" 
+                                element={
+                                    <PrivateRoute isAuthenticated={isAuthenticated} element={<AddSupportGroupsPage />} />
                                 } 
                             />
                             <Route 

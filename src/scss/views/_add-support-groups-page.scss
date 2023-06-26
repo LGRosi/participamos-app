@@ -1,0 +1,50 @@
+@import "../themes/light";
+@import "../utilities/mixins";
+
+.add-support-groups-general-container {
+    margin-bottom: 30px;
+
+    .sub-title-add-support-groups {
+        text-align: center;
+        color: #051a26;
+        width: 270px;
+        margin-bottom: 20px;
+        margin-inline: auto;
+        text-align: center;
+    }
+    
+    .form-add-support-groups {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .fields-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: min(85%, 400px);
+            margin-bottom: 20px;
+        }
+
+        .label {
+            font-size: 14px;
+            margin-bottom: 5px
+        }
+
+        .input {
+            @include input(100%);
+        }
+        
+        .link-router {
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+
+            .button-add {
+                @include button(85%, 32px);
+            }
+        }
+    }
+}

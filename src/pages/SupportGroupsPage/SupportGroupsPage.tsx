@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { GoSearch } from "react-icons/go";
-import { SupportGroups } from "../interfaces/supportGroups.interfaces";
-import imageDonationOne from "../assets/images/donation-one.jpg";
-import imageDonationTwo from "../assets/images/donation-two.jpg";
-import imageDonationThree from "../assets/images/donate-three.jpg";
-import imageDonationFour from "../assets/images/donation-four.jpg";
+import { SupportGroups } from "../../interfaces/supportGroups.interfaces";
+import imageDonationOne from "../../assets/images/donation-one.jpg";
+import imageDonationTwo from "../../assets/images/donation-two.jpg";
+import imageDonationThree from "../../assets/images/donate-three.jpg";
+import imageDonationFour from "../../assets/images/donation-four.jpg";
 import { BsPlus } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 function SupportGroupsPage() {
 
@@ -49,13 +50,15 @@ function SupportGroupsPage() {
                 Acá podés encontrar todos los grupos relacionados a la ayuda social
             </p>
             <div className="div-add-support-groups-container">
-                <button
-                    className="button-add-support-groups"
-                    type="button"
-                >
-                    <BsPlus size={23} />
-                    Registrarse como grupo de ayuda
-                </button>
+                <Link to="/crear-grupos-de-ayuda">
+                    <button
+                        className="button-add-support-groups"
+                        type="button"
+                    >
+                            <BsPlus size={23} />
+                            Registrarse como grupo de ayuda
+                    </button>
+                </Link>
             </div>
 
             <form className="form-support-groups-search">
@@ -78,36 +81,36 @@ function SupportGroupsPage() {
                 </div>
             </form>
             {
-            arraySupportGroups
-                .filter((elementSearch) => {
-                    return search.toLowerCase() === ""
-                    ? elementSearch
-                    : elementSearch.title.toLowerCase().includes(search);
-                })
-                .map((groupsItems) => (
-                    <div key={groupsItems.id} className="card-support-groups-container">
-                        <div className="info-support-groups-container">
-                            <h3 className="title-support-groups">{groupsItems.title}</h3>
-                            <p className="description-support-groups">
-                            {groupsItems.description}
-                            </p>
+                arraySupportGroups
+                    .filter((elementSearch) => {
+                        return search.toLowerCase() === ""
+                        ? elementSearch
+                        : elementSearch.title.toLowerCase().includes(search);
+                    })
+                    .map((groupsItems) => (
+                        <div key={groupsItems.id} className="card-support-groups-container">
+                            <div className="info-support-groups-container">
+                                <h3 className="title-support-groups">{groupsItems.title}</h3>
+                                <p className="description-support-groups">
+                                {groupsItems.description}
+                                </p>
+                            </div>
+                            <div className="image-support-groups-container">
+                                <img
+                                    className="image-support-groups"
+                                    src={groupsItems.image} 
+                                    width="250" 
+                                    alt={groupsItems.title} 
+                                />
+                            </div>
+                            <button 
+                                className="button-more-information" 
+                                type="button"
+                            >
+                                Más información
+                            </button>
                         </div>
-                        <div className="image-support-groups-container">
-                            <img
-                                className="image-support-groups"
-                                src={groupsItems.image} 
-                                width="250" 
-                                alt={groupsItems.title} 
-                            />
-                        </div>
-                        <button 
-                            className="button-more-information" 
-                            type="button"
-                        >
-                            Más información
-                        </button>
-                    </div>
-                ))
+                    ))
             }
         </section>
     );
