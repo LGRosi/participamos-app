@@ -10,7 +10,7 @@ function SideBarMenuCardView({ card, isOpen }: SideBarMenuCardViewProps) {
                 className="profile" 
                 src={card.photoUrl} 
                 alt={card.displayName} 
-                width="100%" 
+                width="100%"
             />
             <div className={classNames('profile-info', isOpen ? '' : 'collapsed')}>
                 <div className="name">{card.displayName}</div>
