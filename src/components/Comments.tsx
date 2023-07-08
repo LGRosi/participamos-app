@@ -21,16 +21,13 @@ function Comments() {
     <div className="main-comments-container">
         <div className="message-container">
             {
-                comments.map((text: string) => (
-                    <SentMessageBox key={text} />
-                    // <div key={text} className="message">
-                    //     {text}
-                    // </div>
+                comments.map((text: string, index: number) => (
+                    <SentMessageBox key={index} text={text} />
                 ))
             }
         </div>
 
-        <div className="comments-box-container">
+        <form className="comments-box-container">
             <textarea
                 autoComplete="off"
                 placeholder="Enviar un mensaje a la comunidad"
@@ -46,7 +43,7 @@ function Comments() {
             >
                 <BiSend color="#FFFFFF" size={16}/>
             </button>
-        </div>
+        </form>
     </div>
   );
 }
