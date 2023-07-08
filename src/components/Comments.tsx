@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { BiSend } from "react-icons/bi";
+import io from "socket.io-client";
 import SentMessageBox from "./SentMessageBox";
+
+const socket = io("/");
 
 function Comments() {
   const [comment, setComment] = useState<string>("");
