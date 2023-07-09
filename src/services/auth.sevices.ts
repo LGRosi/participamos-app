@@ -1,41 +1,46 @@
 async function login(email: string, password: string) {
-    return fetch('http://localhost:4000/api/users/login', {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-    })
+    try {
+        const response = await fetch('http://localhost:4000/api/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        })
 
-    .then(async (response): Promise<any> => {
         if (response.ok) {
-            return response.json();
+            return await response.json();
         } else if (response.status === 400) {
             const error = await response.json();
             throw error;
         } else {
-            throw new Error('Error en la llamada');
+            throw new Error("Error en la llamada");
         }
-    })
+
+    } catch (error) {
+        throw new Error("Error al iniciar sesión: " + error);
+    }
 }
 
 async function logout(token: string) {
-    return fetch('http://localhost:4000/api/users/logout', {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify({ token })
-    })
-
-    .then((response): Promise<string> => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('Error en la llamada');
-        }
-    })
+    try {
+        const response = await fetch('http://localhost:4000/api/users/logout', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({ token })
+        })
     
+        if (response.ok) {
+            return await response.json();
+        } else {
+            throw new Error("Error en la llamada");
+        }
+
+    } catch (error) {
+        throw new Error("Error al cerrar sesión: " + error);
+    }
 }
 
 export {
