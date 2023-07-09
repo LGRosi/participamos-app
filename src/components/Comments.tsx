@@ -3,6 +3,7 @@ import { BiSend } from "react-icons/bi";
 import io from "socket.io-client";
 import SentMessageBox from "./SentMessageBox";
 import { Comment } from "../interfaces/comment.interfaces";
+import * as commentsService from "../services/comments.services";
 
 const socket = io("/");
 
@@ -18,25 +19,15 @@ function Comments() {
             from: "Yo",
         };
 
-        //TODO: Llevar esta lógica a un servicio.
-        // Realiza la solicitud POST al backend para guardar el mensaje
         try {
-            await fetch("http://localhost:4000/api/messages", {
-                method: "POST",
-                headers: {
-                "Content-Type": "application/json",
-                },
-                body: JSON.stringify(newComment),
-            });
+            await commentsService.saveComments(newComment);
+            setComments([...comments, newComment]);
+            socket.emit('message', comment);
+            setComment('');
 
         } catch (error) {
-            console.error("Error al guardar el mensaje:", error);
+            console.error('Error al guardar el mensaje:', error);
         }
-
-        setComments([...comments, newComment]);
-        socket.emit("message", comment);
-
-        setComment("");
     };
 
     const handleChange = (eventComment: React.ChangeEvent<HTMLTextAreaElement>) => {
