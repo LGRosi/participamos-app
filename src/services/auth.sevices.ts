@@ -16,10 +16,7 @@ async function login(email: string, password: string) {
         } else {
             throw new Error("Error en la llamada");
         }
-
-    } catch (error) {
-        throw new Error("Error al iniciar sesión: " + error);
-    }
+    } finally {}
 }
 
 async function logout(token: string) {
