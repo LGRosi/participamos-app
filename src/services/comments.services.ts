@@ -1,5 +1,25 @@
 import { Comment } from "../interfaces/comment.interfaces";
 
+async function getComments(): Promise<Comment[]> {
+    try {
+        const response = await fetch("http://localhost:4000/api/messages", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        if (response.ok) {
+            return await response.json();
+        } else {
+            throw new Error("Error en la llamada");
+        }
+        
+    } catch (error) {
+        throw new Error("Error al obtener los mensajes: " + error);
+    }
+}
+
 async function saveComments(newComment: Comment) {
     try {
         const response = await fetch('http://localhost:4000/api/messages', {
@@ -25,5 +45,6 @@ async function saveComments(newComment: Comment) {
 }
 
 export {
+    getComments,
     saveComments
 }

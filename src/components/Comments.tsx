@@ -10,6 +10,20 @@ const socket = io("/");
 function Comments() {
     const [comment, setComment] = useState<string>("");
     const [comments, setComments] = useState<Comment[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+
+    const fetchAllComments = async () => {
+        try {
+            const allComments = await commentsService.getComments();
+            setComments(allComments);
+
+        } catch (error) {
+            console.error("Error al obtener los comentarios:", error);
+
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const handleSubmit = async (eventSubmit: React.ChangeEvent<HTMLFormElement>) => {
         eventSubmit.preventDefault();
@@ -39,6 +53,8 @@ function Comments() {
     };
 
     useEffect(() => {
+        fetchAllComments();
+
         socket.on("message", receiveMessage);
 
         return () => {
@@ -48,31 +64,39 @@ function Comments() {
 
     return (
         <div className="main-comments-container">
-            <div className="message-container">
-                {
-                    comments.map((comment: Comment, index: number) => (
-                        <SentMessageBox
-                            key={index}
-                            bodyMessage={comment.bodyMessage}
-                            from={comment.from}
-                        />
-                    ))
-                }
-            </div>
+            {
+                loading 
+                ? (<p className="loading">Cargando comentarios...</p>) 
+                : (
+                    <>
+                        <div className="message-container">
+                            {
+                                comments.map((comment: Comment, index: number) => (
+                                    <SentMessageBox
+                                        key={index}
+                                        bodyMessage={comment.bodyMessage}
+                                        from={comment.from}
+                                    />
+                                ))
+                            }
+                        </div>
 
-            <form onSubmit={handleSubmit} className="comments-box-container">
-                <textarea
-                    onChange={handleChange}
-                    value={comment}
-                    autoComplete="off"
-                    placeholder="Enviar un mensaje a la comunidad"
-                    className="comment-textarea"
-                ></textarea>
+                        <form onSubmit={handleSubmit} className="comments-box-container">
+                            <textarea
+                                onChange={handleChange}
+                                value={comment}
+                                autoComplete="off"
+                                placeholder="Enviar un mensaje a la comunidad"
+                                className="comment-textarea"
+                            ></textarea>
 
-                <button className="comment-button">
-                    <BiSend color="#FFFFFF" size={16} />
-                </button>
-            </form>
+                            <button className="comment-button">
+                                <BiSend color="#FFFFFF" size={16} />
+                            </button>
+                        </form>
+                    </>
+                )
+            }
         </div>
     );
 }
