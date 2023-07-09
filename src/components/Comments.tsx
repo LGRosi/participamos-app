@@ -10,7 +10,7 @@ function Comments() {
     const [comment, setComment] = useState<string>("");
     const [comments, setComments] = useState<Comment[]>([]);
 
-    const handleSubmit = (eventSubmit: React.ChangeEvent<HTMLFormElement>) => {
+    const handleSubmit = async (eventSubmit: React.ChangeEvent<HTMLFormElement>) => {
         eventSubmit.preventDefault();
 
         const newComment: Comment = {
@@ -18,8 +18,25 @@ function Comments() {
             from: "Yo",
         };
 
+        //TODO: Llevar esta lógica a un servicio.
+        // Realiza la solicitud POST al backend para guardar el mensaje
+        try {
+            await fetch("http://localhost:4000/api/messages", {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newComment),
+            });
+
+        } catch (error) {
+            console.error("Error al guardar el mensaje:", error);
+        }
+
         setComments([...comments, newComment]);
         socket.emit("message", comment);
+
+        setComment("");
     };
 
     const handleChange = (eventComment: React.ChangeEvent<HTMLTextAreaElement>) => {

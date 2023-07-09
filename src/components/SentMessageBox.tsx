@@ -1,5 +1,5 @@
 import ProfilePage from "../assets/images/profile.png";
-import { SentMessageBoxProps } from "../interfaces/SentMessageBoxProps.interfaces";
+import { SentMessageBoxProps } from "../interfaces/sentMessageBoxProps.interfaces";
 
 function SentMessageBox({ bodyMessage, from }: SentMessageBoxProps) {
     return (
