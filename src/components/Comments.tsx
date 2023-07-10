@@ -31,6 +31,7 @@ function Comments() {
         const newComment: Comment = {
             bodyMessage: comment,
             from: "Yo",
+            dateTime: new Date().toISOString()
         };
 
         try {
@@ -40,7 +41,7 @@ function Comments() {
             setComment('');
 
         } catch (error) {
-            console.error('Error al guardar el mensaje:', error);
+            throw new Error("Error al guardar el mensaje: " + error);
         }
     };
 
@@ -54,9 +55,10 @@ function Comments() {
 
     useEffect(() => {
         fetchAllComments();
+    }, []);
 
+    useEffect(() => {
         socket.on("message", receiveMessage);
-
         return () => {
             socket.off("message", receiveMessage);
         };
@@ -76,6 +78,7 @@ function Comments() {
                                         key={index}
                                         bodyMessage={comment.bodyMessage}
                                         from={comment.from}
+                                        dateTime={comment.dateTime}
                                     />
                                 ))
                             }

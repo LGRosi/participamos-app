@@ -17,8 +17,7 @@
     .container-of-all-texts {
         .name-and-date-container {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            flex-direction: column;
 
             .name {
                 font-size: 14px;
@@ -29,6 +28,7 @@
             .date {
                 font-size: 10px;
                 color: $grey;
+                margin-bottom: 20px;
             }
         }
 

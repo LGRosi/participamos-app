@@ -14,7 +14,7 @@ async function login(email: string, password: string) {
             const error = await response.json();
             throw error;
         } else {
-            throw new Error("Error en la llamada");
+            throw new Error(`Error en la llamada. Status: ${response.status}. Status text: ${response.statusText}`);
         }
     } finally {}
 }

@@ -12,11 +12,11 @@ async function getComments(): Promise<Comment[]> {
         if (response.ok) {
             return await response.json();
         } else {
-            throw new Error("Error en la llamada");
+            throw new Error(`Error en la llamada. Status: ${response.status}. Status text: ${response.statusText}`);
         }
         
     } catch (error) {
-        throw new Error("Error al obtener los mensajes: " + error);
+        throw new Error(`Error al guardar el mensaje: ${error}`);
     }
 }
 
@@ -40,7 +40,7 @@ async function saveComments(newComment: Comment) {
         }
 
     } catch (error) {
-        throw new Error('Error al guardar el mensaje: ' + error);
+        throw new Error(`Error al guardar el mensaje: ${error}`);
     }
 }
 

@@ -1,7 +1,11 @@
 import ProfilePage from "../assets/images/profile.png";
 import { SentMessageBoxProps } from "../interfaces/sentMessageBoxProps.interfaces";
+import { formatDateTime } from "../utils/formatDateTime.utils";
 
-function SentMessageBox({ bodyMessage, from }: SentMessageBoxProps) {
+function SentMessageBox({ bodyMessage, from, dateTime }: SentMessageBoxProps) {
+
+    const formattedDateTime = formatDateTime(dateTime);
+
     return (
         <div className="sent-message-box-container">
             <img
@@ -12,7 +16,7 @@ function SentMessageBox({ bodyMessage, from }: SentMessageBoxProps) {
             <div className="container-of-all-texts">
                 <div className="name-and-date-container">
                     <p className="name">{from}</p>
-                    <p className="date">29/11/2022</p>
+                    <p className="date">{formattedDateTime}</p>
                 </div>
                 <p className="description-message">{bodyMessage}</p>
             </div>
