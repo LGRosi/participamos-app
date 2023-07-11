@@ -4,7 +4,7 @@ import App from './App'
 import './main.scss';
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
 );

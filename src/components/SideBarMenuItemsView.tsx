@@ -1,4 +1,4 @@
-import { classNames } from "../utils/classes";
+import { classNames } from "../utils/classes.utils";
 import "../scss/components/_side-bar-menu-items-view.scss";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";

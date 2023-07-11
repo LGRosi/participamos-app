@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { classNames } from "../utils/classes";
+import { classNames } from "../utils/classes.utils";
 import { VscMenu } from "react-icons/vsc";
 import SideBarMenuCardView from "./SideBarMenuCardView";
 import SideBarMenuItemsView from "./SideBarMenuItemsView";

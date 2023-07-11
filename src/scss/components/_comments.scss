@@ -3,6 +3,11 @@
 
 .main-comments-container {
 
+    .loading {
+        text-align: center;
+        margin-top: 50px;
+    }
+
     .message-container {
         overflow: scroll;
         height: 55vh;
