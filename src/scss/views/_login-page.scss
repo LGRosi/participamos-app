@@ -69,7 +69,32 @@
                     border-radius: 3px;
                     border: 1px solid rgb(186, 185, 185);
                 }
+
+                .password-input-container {
+                    position: relative;
+                    width: min(100%, 330px);
+                    
+                    .input-password {
+                        width: 100%;
+                        padding-right: 35px;
+                    }
     
+                    .toggle-password {
+                        position: absolute;
+                        top: 50%;
+                        right: 5px;
+                        transform: translateY(-50%);
+                        background: transparent;
+                        border: none;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 30px;
+                        height: 100%;
+                        color: $grey;
+                    }
+                }
             }
     
             .button-login {
