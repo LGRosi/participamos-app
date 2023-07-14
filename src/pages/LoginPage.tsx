@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import * as authService from "../services/auth.sevices";
 import logoParticipamos from "../assets/svg/icon-logo-participamos.svg";
 import { FcGoogle } from "react-icons/fc";
-
+import { RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
 
 function LoginPage({ onLogin }: any) {
 
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [errors, setErrors] = useState<string[]>([]);
+    const [showPassword, setShowPassword] = useState<boolean>(false);
 
     function handleSubmit(eventSubmit: React.ChangeEvent<HTMLFormElement>) {
         eventSubmit.preventDefault();
@@ -32,6 +33,11 @@ function LoginPage({ onLogin }: any) {
 
     function handleChangePassword(eventPassword: React.ChangeEvent<HTMLInputElement>) {
         setPassword(eventPassword.target.value);
+    }
+
+    function handleTogglePassword(eventShow: React.MouseEvent<HTMLButtonElement>) {
+        eventShow.preventDefault();
+        setShowPassword(!showPassword);
     }
 
     return(
@@ -69,13 +75,19 @@ function LoginPage({ onLogin }: any) {
                     </div>
                     <div className="password-container">
                         <label className="label" htmlFor="password">Password</label>
-                        <input 
-                            className="input-password" 
-                            type="password" 
-                            onChange={handleChangePassword} 
-                            value={password} 
-                            placeholder="Password"
-                        />
+                        <div className="password-input-container">
+                            <input 
+                                className="input-password" 
+                                type={showPassword ? "text" : "password"}
+                                onChange={handleChangePassword} 
+                                value={password} 
+                                placeholder="Password"
+                            />
+
+                            <button className="toggle-password" onClick={handleTogglePassword}>
+                                {showPassword ? <RiEyeLine size={18} /> : <RiEyeCloseLine size={18} />}
+                            </button>
+                        </div>
                     </div>
                     <button className="button-login" type="submit">Ingresar</button>
                 </form>
