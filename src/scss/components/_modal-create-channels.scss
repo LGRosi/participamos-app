@@ -17,11 +17,11 @@
     .modal-container {
        @include modalContainer;
 
-        .modal-button-close {
-            display: flex;
-            justify-content: flex-end;
-            margin: -10px -5px 15px 0px;
-        }
+       .modal-button-close-container {
+           display: flex;
+           justify-content: flex-end;
+           margin: -10px -5px 15px 0px;
+       }
 
         .modal-title {
            font-size: 18px;
