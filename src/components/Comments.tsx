@@ -14,6 +14,7 @@ function Comments() {
 
     const fetchAllComments = async () => {
         try {
+            setLoading(true);
             const allComments = await commentsService.getComments();
             setComments(allComments);
 

@@ -1,8 +1,7 @@
-import { Comment } from "../interfaces/comment.interfaces";
 
-async function getComments(): Promise<Comment[]> {
+async function getAllChannels(): Promise<any[]> {
     try {
-        const url = "http://localhost:4000/api/messages";
+        const url = "http://localhost:4000/api/channels";
         const response = await fetch(url, {
             method: "GET",
             headers: {
@@ -17,13 +16,13 @@ async function getComments(): Promise<Comment[]> {
         }
         
     } catch (error) {
-        throw new Error(`Error al traer todos los mensaje: ${error}`);
+        throw new Error(`Error al traer todos los canales: ${error}`);
     }
 }
 
-async function saveComments(newComment: Comment) {
+async function saveChannel(newComment: any) {
     try {
-        const url = "http://localhost:4000/api/messages";
+        const url = "http://localhost:4000/api/channels";
         const response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -42,11 +41,11 @@ async function saveComments(newComment: Comment) {
         }
 
     } catch (error) {
-        throw new Error(`Error al guardar el mensaje: ${error}`);
+        throw new Error(`Error al guardar el canal: ${error}`);
     }
 }
 
 export {
-    getComments,
-    saveComments
+    getAllChannels,
+    saveChannel
 }
