@@ -1,3 +1,3 @@
 export interface ModalCreateChannelsProps {
-  closeModal: (value: boolean) => void;
+    closeModal: (value: boolean) => void;
 }
