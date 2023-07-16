@@ -6,17 +6,18 @@ import { useEffect, useState } from "react";
 import { GoSearch } from "react-icons/go";
 import * as channelsService from "../services/channels.services";
 
-function Channels() {
+function Channels({ channels }: { channels: Channel[] }) {
 
     const [search, setSearch] = useState<string>("");
-    const [channels, setChannels] = useState<Channel[]>([]);
+    // const [channels, setChannels] = useState<Channel[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
     const fetchAllChannels = async () => {
         try {
             setLoading(true);
-            const allChannels = await channelsService.getAllChannels();
-            setChannels(allChannels);
+            await channelsService.getAllChannels();
+            // const allChannels = await channelsService.getAllChannels();
+            // setChannels(allChannels);
 
         } catch (error) {
             console.error("Error al obtener los canales:", error);

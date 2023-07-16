@@ -20,7 +20,7 @@ async function getAllChannels(): Promise<any[]> {
     }
 }
 
-async function saveChannel(newComment: any) {
+async function saveChannel(newChannel: any) {
     try {
         const url = "http://localhost:4000/api/channels";
         const response = await fetch(url, {
@@ -28,7 +28,7 @@ async function saveChannel(newComment: any) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(newComment),
+            body: JSON.stringify(newChannel),
         });
 
         if (response.ok) {

@@ -63,7 +63,7 @@
             justify-content: center;
 
             .modal-button-confirm {
-                @include button(60%, 30px);
+                @include button(100%, 30px);
             }
         }
     }
