@@ -4,7 +4,7 @@ import "../scss/components/_modal-create-channels.scss";
 import { ModalCreateChannelsProps } from "../interfaces/modalCreateChannelsProps.interfaces";
 import * as channelsService from "../services/channels.services";
 
-function ModalCreateChannels({ closeModal, addChannelToList  }: ModalCreateChannelsProps ) {
+function ModalCreateChannels({ closeModal }: ModalCreateChannelsProps) {
 
     const [newChannelName, setNewChannelName] = useState<string>("");
 
@@ -15,10 +15,8 @@ function ModalCreateChannels({ closeModal, addChannelToList  }: ModalCreateChann
                 name: trimmedName,
             };
 
-            const savedChannel = await channelsService.saveChannel(newChannel);
-            addChannelToList(savedChannel);
+            await channelsService.saveChannel(newChannel);
             closeModal(false);
-
         } catch (error) {
             console.error("Error al agregar el nuevo canal:", error);
         }
@@ -38,7 +36,9 @@ function ModalCreateChannels({ closeModal, addChannelToList  }: ModalCreateChann
                 closeModal(false);
             }
         };
+
         document.addEventListener("click", handleClickOutside);
+
         return () => {
             document.removeEventListener("click", handleClickOutside);
         };
@@ -52,9 +52,13 @@ function ModalCreateChannels({ closeModal, addChannelToList  }: ModalCreateChann
                         <IoClose size={24} />
                     </button>
                 </div>
+
                 <p className="modal-title">Agregar un nuevo canal</p>
+
                 <div className="modal-body">
-                    <p className="modal-description">Agregá el nombre de un tema social que quieras debatir</p>
+                    <p className="modal-description">
+                        Agregá el nombre de un tema social que quieras debatir
+                    </p>
                     <div className="modal-input-container">
                         <label className="modal-label-name">Nombre del canal</label>
                         <input
@@ -66,11 +70,12 @@ function ModalCreateChannels({ closeModal, addChannelToList  }: ModalCreateChann
                         />
                     </div>
                 </div>
+                
                 <div className="modal-footer">
-                    <button 
-                        className="modal-button-confirm"  
+                    <button
+                        className="modal-button-confirm"
                         type="button"
-                        onClick={handleAddChannel} 
+                        onClick={handleAddChannel}
                         disabled={isInputEmpty()}
                     >
                         Agregar
