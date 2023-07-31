@@ -103,12 +103,14 @@ function SupportGroupsPage() {
                                     alt={groupsItems.title} 
                                 />
                             </div>
-                            <button 
-                                className="button-more-information" 
-                                type="button"
-                            >
-                                Más información
-                            </button>
+                            <Link to="/detalle-grupo-de-ayuda">
+                                <button 
+                                    className="button-more-information" 
+                                    type="button"
+                                >
+                                    Más información
+                                </button>
+                            </Link>
                         </div>
                     ))
             }

@@ -6,6 +6,7 @@
 @use './scss/components/card';
 @use './scss/components/channels';
 @use './scss/components/comments';
+@use './scss/components/maps';
 @use './scss/components/modal-create-channels';
 @use './scss/components/nav-bar-forum';
 @use './scss/components/sent-message-box';
@@ -25,6 +26,7 @@
 
 /* Views */
 @use './scss/views/add-support-groups-page';
+@use './scss/views/detail-support-groups-page';
 @use './scss/views/forum-page';
 @use './scss/views/home-page';
 @use './scss/views/idea-channels-page';
