@@ -11,7 +11,7 @@ function AddSupportGroupsPage() {
             <section className="add-support-groups-general-container">
                 <h2>Crear grupo de ayuda</h2>
                 <p className="sub-title-add-support-groups">
-                    Acá podés crear tu grupo ayuda social
+                    Acá podés crear tu grupo de ayuda social
                 </p>
 
                 <form className="form-add-support-groups" onSubmit={handleSubmit}>

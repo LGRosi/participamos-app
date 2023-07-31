@@ -14,6 +14,7 @@ import { Suspense, useEffect, useState } from "react";
 import LoginPage from "./pages/LoginPage";
 import { CardProfile } from "./interfaces/cardProfile.interfaces";
 import AddSupportGroupsPage from "./pages/SupportGroupsPage/AddSupportGroupsPage";
+import DetailSupportGroupsPage from "./pages/SupportGroupsPage/DetailSupportGroupsPage";
 
 function PrivateRoute({ isAuthenticated, element, ...props }: any) {
     return isAuthenticated ? element : <Navigate to={'/login'} />;
@@ -119,6 +120,12 @@ function App() {
                                 path="/crear-grupos-de-ayuda" 
                                 element={
                                     <PrivateRoute isAuthenticated={isAuthenticated} element={<AddSupportGroupsPage />} />
+                                } 
+                            />
+                            <Route 
+                                path="/detalle-grupo-de-ayuda" 
+                                element={
+                                    <PrivateRoute isAuthenticated={isAuthenticated} element={<DetailSupportGroupsPage />} />
                                 } 
                             />
                             <Route 
