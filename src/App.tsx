@@ -1,8 +1,4 @@
-import { FcConferenceCall, FcHome, FcIdea } from "react-icons/fc";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
-import { SideBarMenu } from "./components/SideBarMenu";
-import { SideBarMenuItem } from "./interfaces/sideBarMenu.interfaces";
 import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
 import IdeaChannelsPage from "./pages/IdeaChannelsPage";
@@ -10,11 +6,15 @@ import SupportGroupsPage from "./pages/SupportGroupsPage/SupportGroupsPage";
 import profileImage from "./assets/images/profile.png";
 import Header from "./components/Header";
 import ForumPage from "./pages/ForumPage";
-import { Suspense, useEffect, useState } from "react";
 import LoginPage from "./pages/LoginPage";
-import { CardProfile } from "./interfaces/cardProfile.interfaces";
 import AddSupportGroupsPage from "./pages/SupportGroupsPage/AddSupportGroupsPage";
 import DetailSupportGroupsPage from "./pages/SupportGroupsPage/DetailSupportGroupsPage";
+import { FcConferenceCall, FcHome, FcIdea } from "react-icons/fc";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { SideBarMenu } from "./components/SideBarMenu";
+import { SideBarMenuItem } from "./interfaces/sideBarMenu.interfaces";
+import { Suspense, useEffect, useState } from "react";
+import { CardProfile } from "./interfaces/cardProfile.interfaces";
 
 function PrivateRoute({ isAuthenticated, element, ...props }: any) {
     return isAuthenticated ? element : <Navigate to={'/login'} />;

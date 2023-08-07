@@ -1,7 +1,7 @@
 import iconCreativity from "../assets/svg/creativity.svg";
 import iconFourPeople from "../assets/svg/four-people.svg";
 import iconHumanitarianHelpOne from "../assets/svg/humanitarian-help-one.svg";
-import Card from "../components/card";
+import Card from "../components/Card";
 
 function HomePage() {
     return(

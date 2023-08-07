@@ -40,11 +40,11 @@ function Maps() {
             {
                 isLoaded ? (
                     <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={center}
-                    options={mapOptions}
-                    onLoad={onLoad}
-                    onUnmount={onUnmount}
+                        mapContainerStyle={containerStyle}
+                        center={center}
+                        options={mapOptions}
+                        onLoad={onLoad}
+                        onUnmount={onUnmount}
                     ></GoogleMap>
                 ) : (
                     <div>Cargando Mapa...</div>

@@ -1,5 +1,5 @@
-import { classNames } from "../utils/classes.utils";
 import "../scss/components/_side-bar-menu-card-view.scss";
+import { classNames } from "../utils/classes.utils";
 import { Link } from "react-router-dom";
 import { SideBarMenuCardViewProps } from "../interfaces/sideBarMenuCardViewProps.interfaces";
 

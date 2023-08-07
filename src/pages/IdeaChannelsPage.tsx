@@ -1,9 +1,9 @@
+import * as channelsService from "../services/channels.services";
+import ModalCreateChannels from "../components/ModalCreateChannels";
+import Channels from "../components/Channels";
 import { BsPlus } from "react-icons/bs";
 import { useEffect, useState } from "react";
-import ModalCreateChannels from "../components/ModalCreateChannels";
 import { Channel } from "../interfaces/channels.interfaces";
-import * as channelsService from "../services/channels.services";
-import Channels from "../components/channels";
 
 function IdeaChannelsPage() {
 
@@ -14,6 +14,7 @@ function IdeaChannelsPage() {
         try {
             const allChannels = await channelsService.getAllChannels();
             setChannels(allChannels);
+
         } catch (error) {
             console.error("Error al obtener los canales:", error);
         }
@@ -24,6 +25,7 @@ function IdeaChannelsPage() {
             await channelsService.saveChannel(newChannel);
             closeModal();
             fetchChannelsFromAPI();
+            
         } catch (error) {
             console.error("Error al agregar el nuevo canal:", error);
         }
