@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { BiSend } from "react-icons/bi";
 import io from "socket.io-client";
 import SentMessageBox from "./SentMessageBox";
-import { Comment } from "../interfaces/comment.interfaces";
 import * as commentsService from "../services/comments.services";
+import { useEffect, useState } from "react";
+import { BiSend } from "react-icons/bi";
+import { Comment } from "../interfaces/comment.interfaces";
 
 const socket = io("/");
 

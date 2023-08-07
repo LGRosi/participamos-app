@@ -1,8 +1,8 @@
+import * as channelsService from "../services/channels.services";
+import "../scss/components/_modal-create-channels.scss";
 import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
-import "../scss/components/_modal-create-channels.scss";
 import { ModalCreateChannelsProps } from "../interfaces/modalCreateChannelsProps.interfaces";
-import * as channelsService from "../services/channels.services";
 
 function ModalCreateChannels({ closeModal }: ModalCreateChannelsProps) {
 

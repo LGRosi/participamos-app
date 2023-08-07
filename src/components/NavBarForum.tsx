@@ -1,6 +1,6 @@
+import "../scss/components/_nav-bar-forum.scss";
 import { GoSearch } from "react-icons/go";
 import { BsPeopleFill } from "react-icons/bs";
-import "../scss/components/_nav-bar-forum.scss";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 

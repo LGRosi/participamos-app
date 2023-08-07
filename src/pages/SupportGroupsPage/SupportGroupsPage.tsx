@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { GoSearch } from "react-icons/go";
-import { SupportGroups } from "../../interfaces/supportGroups.interfaces";
 import imageDonationOne from "../../assets/images/donation-one.jpg";
 import imageDonationTwo from "../../assets/images/donation-two.jpg";
 import imageDonationThree from "../../assets/images/donate-three.jpg";
 import imageDonationFour from "../../assets/images/donation-four.jpg";
+import { useState } from "react";
+import { GoSearch } from "react-icons/go";
+import { SupportGroups } from "../../interfaces/supportGroups.interfaces";
 import { BsPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -55,8 +55,8 @@ function SupportGroupsPage() {
                         className="button-add-support-groups"
                         type="button"
                     >
-                            <BsPlus size={23} />
-                            Registrarse como grupo de ayuda
+                        <BsPlus size={23} />
+                        Registrarse como grupo de ayuda
                     </button>
                 </Link>
             </div>

@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Comments from "../components/Comments";
 import NavBarForum from "../components/NavBarForum";
 import "../scss/views/_forum-page.scss"
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function ForumPage() {
 
