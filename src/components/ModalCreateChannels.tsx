@@ -11,7 +11,7 @@ function ModalCreateChannels({ closeModal }: ModalCreateChannelsProps) {
     const handleAddChannel = async () => {
         try {
             const trimmedName = newChannelName.trim();
-            const newChannel = {
+            const newChannel: any = {
                 name: trimmedName,
             };
 
