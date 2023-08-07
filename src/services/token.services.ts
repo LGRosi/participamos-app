@@ -1,8 +1,8 @@
-function setToken(token: any) {
+function setToken(token: string) {
     localStorage.setItem('token', token);
 }
 
-function getToken() {
+function getToken(): string | null {
     return localStorage.getItem('token');
 }
 

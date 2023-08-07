@@ -3,15 +3,16 @@ import logoParticipamos from "../assets/svg/icon-logo-participamos.svg";
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
+import { LoginPageProps } from "../interfaces/loginPageProps.interfaces";
 
-function LoginPage({ onLogin }: any) {
+function LoginPage({ onLogin }: LoginPageProps) {
 
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [errors, setErrors] = useState<string[]>([]);
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
-    function handleSubmit(eventSubmit: React.ChangeEvent<HTMLFormElement>) {
+    function handleSubmit(eventSubmit: React.FormEvent<HTMLFormElement>) {
         eventSubmit.preventDefault();
 
         authService.login(email, password)

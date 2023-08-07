@@ -1,5 +1,6 @@
+import { Channel } from "../interfaces/channels.interfaces";
 
-async function getAllChannels(): Promise<any[]> {
+async function getAllChannels(): Promise<Channel[]> {
     try {
         const url = "http://localhost:4000/api/channels";
         const response = await fetch(url, {
@@ -20,7 +21,7 @@ async function getAllChannels(): Promise<any[]> {
     }
 }
 
-async function saveChannel(newChannel: any) {
+async function saveChannel(newChannel: Channel): Promise<Channel> {
     try {
         const url = "http://localhost:4000/api/channels";
         const response = await fetch(url, {
