@@ -1,3 +1,4 @@
+import * as tokenService from "./services/token.services.js";
 import "./App.scss";
 import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage";
@@ -27,7 +28,7 @@ function App() {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
+        const token = tokenService.getToken();
         if (token) {
             setIsAuthenticated(true);
         }
@@ -42,7 +43,7 @@ function App() {
     }, [isAuthenticated])
 
     function onLogin(user: string, token: string) {
-        localStorage.setItem('token', token);
+        tokenService.setToken(token);
         setUser(user);
         setIsAuthenticated(true);
     }
