@@ -31,8 +31,8 @@ function ModalCreateChannels({ closeModal }: ModalCreateChannelsProps) {
     };
 
     useEffect(() => {
-        const handleClickOutside = (event: any) => {
-            if (event.target.classList.contains("modal-background")) {
+        const handleClickOutside = (event: MouseEvent) => {
+            if ((event.target as HTMLElement).classList.contains("modal-background")) {
                 closeModal(false);
             }
         };

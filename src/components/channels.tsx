@@ -47,12 +47,12 @@ function Channels({ channels }: { channels: Channel[] }) {
                         <ul className="ul-channel-container">
                             {
                                 channels
-                                .filter((elementSearch: any) => {
+                                .filter((elementSearch: Channel) => {
                                     return search.toLowerCase() === ""
                                     ? elementSearch
                                     : elementSearch.name.toLowerCase().includes(search);
                                 })
-                                .map((channelItems: any) => (
+                                .map((channelItems: Channel) => (
                                     <Link key={channelItems._id} to={`${channelItems.name}/foro`}>
                                         <li key={channelItems._id} className="li-channel-element">
                                             <BsHash color="#4e42d4" size={25} />
